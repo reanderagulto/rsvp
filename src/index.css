@@ -16,6 +16,13 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "OpenSauce";
+  src: local("OpenSauce"),
+   url("./assets/fonts/OpenSauce/opensauce-regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
 :root {
   --font-gistesy: "Gistesy", sans-serif;
   --font-tan: "TANAngelton", sans-serif;
