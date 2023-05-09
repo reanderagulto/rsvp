@@ -7,6 +7,9 @@ import header from '../../assets/images/header.png'
 import footer from '../../assets/images/footer.png'
 import bigLogo from '../../assets/images/logo.png'
 
+// Data
+import { pageInfo } from '../../data/info'
+
 const SplashScreen = () => {
   return (
     <section className={cx.main}>
@@ -14,8 +17,8 @@ const SplashScreen = () => {
       <div className={cx.wrapper}>
         <div className={cx.content}>
           <img src={bigLogo} alt="Jeni x Reander Nuptial" />
-          <h1>Jeni and Reander</h1>
-          <h4>Coming Soon</h4>
+          <h1>{pageInfo.banner.title}</h1>
+          <h4>{pageInfo.banner.coming_soon}</h4>
         </div>
       </div>
       <div className={clsx(cx.footer, cx.headings)} style={{backgroundImage: `url(${footer})`}}>

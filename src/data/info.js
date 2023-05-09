@@ -5,6 +5,7 @@ export const pageInfo = {
         date: 'September 23, 2023', 
         time: '3:00 PM',
         location: 'Villa Juliana Resort <br> <span>Tayabas, Quezon</span>',
+        coming_soon: 'Coming Soon',
     }, 
     story: {
         title: 'Our Story', 
