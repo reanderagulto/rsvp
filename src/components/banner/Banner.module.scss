@@ -1,0 +1,43 @@
+.wrapper {
+    @apply w-[100%] relative;
+    &::before {
+        @apply content-[''] absolute w-[100%] h-[100%] bg-[#252424] opacity-[30%] z-[2];
+    }
+}
+
+.top {
+    @apply bg-no-repeat p-[0.9375rem] bg-cover bg-top z-[1] md:p-[1.875rem];
+}
+
+.container {
+    @apply mt-[2.625rem] relative z-[3];
+}
+
+.content {
+    @apply text-center;
+
+    .heading {
+
+        @apply mb-[6.625rem];
+
+        h1 {
+            @apply text-[5rem] font-heading md:text-xxl text-white-200 drop-shadow-xxl;
+        }
+    
+        h2 {
+            @apply font-secondary md:text-sm text-white-200 md:-mt-[2.375rem];
+        }    
+    }
+
+
+    .inner {
+        @apply font-secondary md:text-sm text-white-200 pb-[3.875rem];
+
+        p {
+            @apply leading-[1.5] mb-[1.5rem];
+            span {
+                @apply block text-[0.875rem];
+            }
+        }
+    }
+}

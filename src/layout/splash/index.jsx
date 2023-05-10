@@ -3,12 +3,12 @@ import * as cx from './Splash.module.scss'
 import clsx from 'clsx'
 
 // Images
-import header from '../../assets/images/header.png'
-import footer from '../../assets/images/footer.png'
-import bigLogo from '../../assets/images/logo.png'
+import header from '@assets/images/header.png'
+import footer from '@assets/images/footer.png'
+import bigLogo from '@assets/images/logo.png'
 
 // Data
-import { pageInfo } from '../../data/info'
+import { pageInfo } from '@data/info'
 
 const SplashScreen = () => {
   return (
