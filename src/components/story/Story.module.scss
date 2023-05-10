@@ -1,0 +1,26 @@
+.wrapper {
+    @apply relative overflow-hidden h-auto;
+}
+
+.mask {
+    @apply bg-no-repeat bg-cover bg-top content-[''] absolute -top-[11.25rem] left-0 w-[100%] h-[50rem] -z-[1];
+}
+
+.container {
+    @apply py-[74px];
+    h2 {
+        @apply font-heading text-primary-200 drop-shadow-xxl text-xl mb-[51px];
+    }
+}
+
+.content {
+    @apply flex flex-col-reverse justify-between items-start gap-[30px] md:flex-row md:gap-[141px];
+
+    p {
+        @apply font-primary text-xsm mb-[32px];
+
+        strong {
+            @apply block;
+        }
+    }
+}

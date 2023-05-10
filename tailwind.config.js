@@ -1,21 +1,58 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './index.html',
+    './src/**/*.{js,jsx,ts,tsx}'
   ],
-  theme: { 
-    extend: {
+  theme: {
+    container: {
+      center: true,
+      padding: '1rem',
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1440px',
+      },
+    },
 
-      dropShadow: {
-        'xl': '0.1875rem 0.3125rem 0.25rem rgba(0, 0, 0, 0.2)',
-        'xxl': '0.3125rem 0.375rem 0.25rem rgba(0, 0, 0, 0.25)'
+    screens: {
+      xxxs: '375px',
+      xxs: '400px',
+      xs: '427px',
+      sm: '640px',
+      md: '768px',
+      lg: '1440px',
+      xl: '1600px',
+    },
+
+    extend: {
+      colors: {  
+        primary: {
+          100: '#61879D',
+          200: '#446070', 
+        }, 
+        secondary: '#A27A3A',
+        'color-swatch': {
+          100: '#AED4DA', 
+          200: '#76B4DD',
+          300: '#BEC4ED'
+        },
+        white: {
+          200: '#F5F4F4',
+          300: '#FAF7F6'
+        },
       },
 
       fontFamily: {
         primary: ['OpenSauce', 'sans-serif'],
         secondary: ['TANAngelton', 'sans-serif'],
         heading: ['Gistesy', 'sans-serif']
+      },
+
+      dropShadow: {
+        'xl': '0.1875rem 0.3125rem 0.25rem rgba(0, 0, 0, 0.2)',
+        'xxl': '0.3125rem 0.375rem 0.25rem rgba(0, 0, 0, 0.25)'
       },
 
       fontSize: {
@@ -39,22 +76,13 @@ export default {
         }]
       },
 
-      color: {  
-        primary: {
-          1000: '#61879D',
-          2000: '#446070', 
-        }, 
-        secondary: '#A27A3A',
-        'color-swatch': {
-          100: '#AED4DA', 
-          200: '#76B4DD',
-          300: '#BEC4ED'
-        },
-        white: {
-          200: '#F5F4F4',
-          300: '#FAF7F6'
-        },
-      },
+      borderRadius: {
+        sm: '0.5rem',
+        md: '0.625rem',
+        lg: '50%',
+      }, 
+
+
     },
   },
   plugins: [],

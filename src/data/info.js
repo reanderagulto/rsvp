@@ -1,17 +1,30 @@
+import slide01 from '@images/slider/slide01.jpg'
+import slide02 from '@images/slider/slide02.jpg'
+import slide03 from '@images/slider/slide03.jpg'
+import slide04 from '@images/slider/slide04.jpg'
+import slide05 from '@images/slider/slide05.jpg'
+import slide06 from '@images/slider/slide06.jpg'
+import slide07 from '@images/slider/slide07.jpg'
+import slide08 from '@images/slider/slide08.jpg'
+import slide09 from '@images/slider/slide09.jpg'
+import slide10 from '@images/slider/slide10.jpg'
+import slide11 from '@images/slider/slide11.jpg'
+
 export const pageInfo = {
+    menu: ['Our Story', 'Info', 'RSVP'],
     banner: {
         title: 'Jeni and Reander', 
         subtitle: 'are getting married', 
         date: 'September 23, 2023', 
         time: '3:00 PM',
-        location: 'Villa Juliana Resort <br> <span>Tayabas, Quezon</span>',
+        location: 'Villa Juliana Resort<span>Tayabas, Quezon</span>',
         coming_soon: 'Coming Soon',
     }, 
     story: {
         title: 'Our Story', 
         paragraphs: [
-            '<strong>The standard Lorem Ipsum passage, used since the 1500s</strong> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e iusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea co mmodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit e sse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
-            '<strong>The standard Lorem Ipsum passage, used since the 1500s</strong> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e iusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea co mmodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit e sse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
+            '<strong>The standard Lorem Ipsum passage, used since the 1500s</strong> <br> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e iusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea co mmodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit e sse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."<br>',
+            '<strong>The standard Lorem Ipsum passage, used since the 1500s</strong> <br> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e iusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea co mmodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit e sse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
         ] 
     }, 
     entourage: {
@@ -129,5 +142,6 @@ export const pageInfo = {
         paragraphs: [
             '<strong>The standard Lorem Ipsum passage, used since the 1500s</strong> <br/>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e iusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea co mmodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit e sse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
         ]
-    }
+    },
+    gallery: [slide01, slide02, slide03, slide04, slide05, slide06, slide07, slide08, slide09, slide10, slide11]
 }
