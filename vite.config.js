@@ -11,7 +11,8 @@ export default defineConfig({
       '@components': "/src/components",
       '@layout': "/src/layout",
       '@data': "/src/data",
-      '@images': "/src/assets/images"
+      '@images': "/src/assets/images",
+      '@svg': "/src/assets/svg"
     },
   },
 })

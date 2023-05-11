@@ -1,0 +1,70 @@
+.wrapper {
+    @apply pb-[2.625rem] pt-[2.625rem] lg:pb-[7.6875rem] bg-primary-200;
+}
+.container {
+    h2 {
+        @apply font-heading text-xl text-white-200 drop-shadow-2xl text-center; 
+    }
+}
+
+.accordion {
+    @apply mx-auto my-[1.3125rem] overflow-hidden;
+
+    &.active {
+        .title {
+            @apply rounded-b-none;
+        }
+
+        img.button {
+            @apply -rotate-180;
+        }
+
+        .content {
+            @apply px-[1.125rem] py-[1.875rem] h-auto;
+        }
+    }
+
+    .title {
+        @apply w-full m-auto text-xxsm px-[1.125rem] bg-white-300 rounded-sm font-secondary text-primary-200 h-[4.0625rem] flex items-center justify-between md:text-xsm lg:text-md lg:w-[43.4375rem] transition-all duration-100 ease-linear;
+    }
+    .content {
+        @apply w-full m-auto h-0 px-0 py-0 bg-white-200 font-secondary rounded-b-sm text-xxsm lg:w-[43.4375rem] transition-height delay-100 ease-out;
+
+        .flexCol {
+            @apply flex flex-col m-auto justify-between items-center sm:flex-row sm:justify-around sm:items-start;
+        }
+        h3 {
+            @apply my-[1.25rem];
+        }
+        p {
+            @apply my-[0.625rem];
+        }
+        span {
+            @apply block mt-[0.625rem];
+        }
+        .innerContainer {
+            @apply w-[85%] m-auto;
+        }
+
+        .flexWrap {
+            @apply flex flex-wrap items-start justify-evenly;
+            .principal {
+                @apply grow shrink basis-[12.5rem] my-[0.625rem];
+            }
+            .secondaryContainer {
+                @apply grow shrink basis-[12.5rem] my-[0.625rem];
+            }
+            .inner {
+                @apply grow shrink basis-[12.5rem] my-[0.625rem];
+            }
+        }
+    }
+
+    img.button {
+        @apply transition-rotate duration-300 delay-150 ease-linear;
+        &:hover {
+            @apply cursor-pointer;
+        }
+    }
+
+}

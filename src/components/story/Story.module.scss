@@ -3,21 +3,21 @@
 }
 
 .mask {
-    @apply bg-no-repeat bg-cover bg-top content-[''] absolute -top-[11.25rem] left-0 w-[100%] h-[50rem] -z-[1];
+    @apply bg-no-repeat bg-cover bg-top content-[''] absolute -top-[180px] left-0 w-[100%] h-[800px] -z-[1];
 }
 
 .container {
-    @apply py-[74px];
+    @apply pt-[3.375rem] pb-[2.8125rem] lg:py-[4.625rem];
     h2 {
-        @apply font-heading text-primary-200 drop-shadow-xxl text-xl mb-[51px];
+        @apply font-heading text-primary-200 drop-shadow-xxl text-xl mb-[3.1875rem];
     }
 }
 
 .content {
-    @apply flex flex-col-reverse justify-between items-start gap-[30px] md:flex-row md:gap-[141px];
+    @apply flex flex-col-reverse justify-between items-start gap-[1.875rem] lg:flex-row lg:gap-[8.8125rem];
 
     p {
-        @apply font-primary text-xsm mb-[32px];
+        @apply font-primary text-xsm mb-[2rem];
 
         strong {
             @apply block;

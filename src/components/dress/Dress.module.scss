@@ -1,0 +1,53 @@
+.wrapper {
+    @apply py-[50px] lg:pt-[66px] lg:pb-[106px] bg-primary-200 text-white-300;
+}
+
+.container {    
+    h2 {
+        @apply font-heading text-xl drop-shadow-xl text-center text-white-200;
+    }
+
+    .content {
+        @apply mt-[35px] flex-col flex items-center justify-evenly lg:flex-row;
+
+    }
+
+    .sliders {
+        @apply flex flex-col items-center justify-between gap-[33px] my-[30px] sm:flex-row;
+
+        .boxContainer {
+            @apply content-[''] rounded-md bg-white-200 w-[173px] h-[300px];
+        }
+    }
+
+    .dressCodeContainer{
+        @apply font-primary text-md;
+        p {
+            @apply text-xsm my-[10px];
+
+            span {
+                @apply block font-secondary my-[15px];
+            }
+        }
+    }
+
+    .colorPalette {
+        @apply flex items-center flex-col justify-between gap-[20px] mt-[50px] xxxs:flex-row xxxs:gap-0;
+
+        .item {
+            @apply content-[''] w-[100px] h-[100px] bg-white-300 rounded-lg;
+
+            &.sageGreen {
+                @apply bg-color-swatch-100;
+            }
+
+            &.dustyBlue {
+                @apply bg-color-swatch-200;
+            }
+
+            &.lilac {
+                @apply bg-color-swatch-300;
+            }
+        }
+    }
+}

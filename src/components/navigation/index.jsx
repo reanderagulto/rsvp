@@ -8,14 +8,30 @@ import logo from '@images/logo-sm.png'
 const Navigation = () => {
 
     const [hamburger, setHamburger] = useState(false)
-
+    const [scrolled, setScrolled] = useState(false)
+    
     const handleHamburger = () => {
         setHamburger(!hamburger)
-        console.log(hamburger)
     }
 
+    const changeBackground = () => {
+        if(window.scrollY >= 66)
+            setScrolled(true)
+        else if(window.scrollY == 0)
+            setScrolled(false)
+    }
+
+    useEffect(() => {
+        changeBackground()
+        window.addEventListener('scroll', changeBackground)
+    }, [])
+
     return (
-    <header className={clsx(cx.wrapper)}>
+    <header 
+        className={clsx(cx.wrapper, 
+            scrolled && cx.active
+        )}
+    >
         <div className={clsx(cx.container, 'container')}>
             <div className={cx.logo}>
                 <img src={logo} className='fluid' alt="Jeni x Reander Logo"/>
@@ -24,7 +40,13 @@ const Navigation = () => {
                 <div className={cx.desktop}>
                     <ul className={cx.nav}>
                         {pageInfo.menu.map((item, index) => {
-                            return ( <li key={index} className={cx.item}>{item}</li>)
+                            return ( 
+                                <li key={index} className={cx.item}>
+                                    <a href={item.link}>
+                                        {item.title}
+                                    </a>
+                                </li>
+                            )
                         })}
                     </ul>
                 </div>
