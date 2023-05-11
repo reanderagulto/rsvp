@@ -11,7 +11,20 @@ import slide10 from '@images/slider/slide10.jpg'
 import slide11 from '@images/slider/slide11.jpg'
 
 export const pageInfo = {
-    menu: ['Our Story', 'Info', 'RSVP'],
+    menu: [
+        {
+            title: 'Our Story',
+            link: '#story'
+        },
+        {
+            title: 'Info', 
+            link: '#info',
+        },
+        {
+            title: "RSVP",
+            link: '#rsvp'
+        }
+    ],
     banner: {
         title: 'Jeni and Reander', 
         subtitle: 'are getting married', 
@@ -34,7 +47,7 @@ export const pageInfo = {
                 father: 'Ronnie A. Agulto',
                 mother: 'Lea S. Agulto'
             },
-            bridge: {
+            bride: {
                 father: 'Ricardo T. Imperial', 
                 mother: 'Ma. Juliana Imperial'
             }
@@ -125,16 +138,16 @@ export const pageInfo = {
     location: {
         title: 'Location',
         paragraphs: [
-            '<strong>The standard Lorem Ipsum passage, used since the 1500s</strong> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e iusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea co mmodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit e sse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
+            '<strong>The standard Lorem Ipsum passage, used since the 1500s</strong> <br> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e iusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea co mmodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit e sse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
         ], 
-        waze: '', 
-        maps: ''
+        waze: 'https://www.waze.com/live-map/directions/villa-juliana-m-h-del-pilar-tayabas?to=place.w.79691916.796853627.15749615', 
+        maps: 'https://goo.gl/maps/pV9kX2hzBpvXKpoo8'
     }, 
     dress: {
         title: 'Dress Code', 
         code: {
-            ladies: 'midi or maxi dress, jumpsuit, pantsuit Gents: dark suit, blazer, dress shirt, polo, tie',
-            mens: 'dark suit, blazer, dress shirt, polo, tie'
+            ladies: 'midi or maxi dress, jumpsuit, pantsuit Gents: dark <br>suit, blazer, dress shirt, polo, tie',
+            men: 'dark suit, blazer, dress shirt, polo, tie'
         }
     },
     rsvp: {

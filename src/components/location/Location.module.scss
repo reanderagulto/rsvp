@@ -1,0 +1,37 @@
+.wrapper {
+    @apply pt-[2.625rem] pb-[7.125rem] font-primary text-xsm;
+
+    strong {
+        @apply block mb-[0.625rem];
+    }
+}
+
+.container {
+    h2 {
+        @apply font-heading text-xl text-primary-200 text-center drop-shadow-2xl mb-[4.4375rem];
+    }
+
+    .contentWrap{
+        @apply flex flex-col gap-[1.875rem] items-start justify-between lg:gap-[3.625rem] lg:flex-row;
+    }
+
+    .content {
+        @apply flex flex-col items-start justify-between w-full lg:w-[40%];
+
+        .paragraphs {
+            @apply mb-[2.0625rem];
+        }
+    }
+
+    .mapContainer {
+        @apply w-full lg:w-[60%];
+    }
+
+    .map {
+        @apply w-full h-[28.125rem];
+    }
+}
+
+.button {
+    @apply flex items-center justify-center w-full h-[3.375rem] p-[1.3125rem] bg-primary-200 rounded-md font-secondary text-white-200 my-[0.6875rem] md:h-[4.625rem] hover:bg-primary-100 transition-all ease-in delay-150;
+}

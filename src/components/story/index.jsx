@@ -12,7 +12,7 @@ import { pageInfo } from '@data/info'
 
 const Story = () => {
   return (
-    <section className={cx.wrapper}>
+    <section className={cx.wrapper} id="story">
         <div 
             className={cx.mask} 
             style={{

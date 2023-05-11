@@ -56,6 +56,7 @@ export default {
       },
 
       fontSize: {
+        xxsm: ['0.75rem', '1.25rem'],
         xsm: ['1rem', '1.25rem'],
         sm: ['1.5rem', {
           lineHeight: '2.875rem', 
@@ -82,6 +83,10 @@ export default {
         lg: '50%',
       }, 
 
+      transitionProperty: {
+        'height': 'height', 
+        'rotate': 'rotate'
+      },
 
     },
   },

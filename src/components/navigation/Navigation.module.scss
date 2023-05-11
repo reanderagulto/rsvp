@@ -1,5 +1,19 @@
 .wrapper {
-    @apply fixed h-[5rem] top-[0] left-[0] w-[100%] z-[999] m-auto py-[16px];
+    @apply fixed h-[6rem] top-[0] left-[0] w-[100%] z-[999] m-auto py-[16px] transition-all delay-[10ms] ease-linear;
+
+    &.active {
+        @apply bg-white-300;
+
+        nav .nav .item {
+            @apply text-primary-200 hover:text-secondary;
+        }
+        
+        .hamburger {
+            span {
+                @apply bg-primary-200;
+            }
+        }
+    }
 }
 
 .container {
