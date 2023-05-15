@@ -85,8 +85,14 @@ export default {
 
       transitionProperty: {
         'height': 'height', 
-        'rotate': 'rotate'
+        'rotate': 'rotate',
+        'max-height': 'max-height',
+        'right': 'right',
       },
+
+      transitionTimingFunction: {
+        'linear': 'linear',
+      }
 
     },
   },

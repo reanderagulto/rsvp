@@ -1,5 +1,5 @@
 .wrapper {
-    @apply relative overflow-hidden h-auto;
+    @apply relative overflow-hidden h-auto pt-[3.375rem] pb-[2.8125rem] lg:py-[4.625rem];
 }
 
 .mask {
@@ -7,20 +7,21 @@
 }
 
 .container {
-    @apply pt-[3.375rem] pb-[2.8125rem] lg:py-[4.625rem];
     h2 {
-        @apply font-heading text-primary-200 drop-shadow-xxl text-xl mb-[3.1875rem];
+        @apply font-heading text-primary-200 drop-shadow-xxl text-xl my-[3.1875rem];
     }
 }
 
 .content {
-    @apply flex flex-col-reverse justify-between items-start gap-[1.875rem] lg:flex-row lg:gap-[8.8125rem];
-
+    @apply flex flex-col-reverse justify-between items-center gap-[1.875rem] lg:flex-row lg:gap-[8.8125rem];
     p {
         @apply font-primary text-xsm mb-[2rem];
-
         strong {
             @apply block;
         }
     }
+}
+
+.controlContainer {
+    
 }
