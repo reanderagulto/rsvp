@@ -1,5 +1,5 @@
 .wrapper {
-    @apply fixed h-[6rem] top-[0] left-[0] w-[100%] z-[999] m-auto py-[16px] transition-all delay-[10ms] ease-linear;
+    @apply fixed h-[5rem] top-[0] left-[0] w-[100%] z-[999] m-auto py-[0.3125rem] transition-all delay-[10ms] ease-linear;
 
     &.active {
         @apply bg-white-300;
@@ -17,7 +17,7 @@
 }
 
 .container {
-    @apply flex items-center justify-between;
+    @apply flex items-center justify-between overflow-x-hidden z-[1];
 }
 
 .logo {
@@ -31,14 +31,48 @@
 nav {
     .desktop {
         @apply hidden md:block;    
+        .nav {
+            @apply flex items-center justify-between gap-[3.75rem];
+            .item {
+                @apply font-primary text-md transition-all ease-in-out delay-150 uppercase hover:cursor-pointer hover:text-secondary text-white-200;
+            }
+        }
     }
     .mobile {
         @apply block md:hidden;
-    }
-    .nav {
-        @apply flex items-center justify-between gap-[3.75rem];
-        .item {
-            @apply font-primary text-md transition-all ease-in-out delay-150 uppercase hover:cursor-pointer hover:text-secondary text-white-200;
+
+        .mobileMenu {
+            @apply w-[250px] h-auto absolute top-0 bg-white-300 right-[-100%] p-[20px] rounded-bl-md transition-all duration-500 ease-linear;
+
+            .closeWrapper {
+                @apply relative mb-[30px];
+                .close {
+                    @apply absolute top-[10px] -right-[15px] w-[50px] h-[50px];
+    
+                    span {
+                        @apply absolute content-[''] w-[35px] h-[7px] rounded-sm bg-primary-200 top-[10px] right-[10px];
+                        &:nth-of-type(1) {
+                            @apply rotate-45
+                        }
+                        &:nth-of-type(2) {
+                            @apply -rotate-45
+                        }
+                    }
+                }    
+            }
+            .nav{
+                @apply flex items-center justify-between flex-col mr-[20px];
+                
+                .item {
+                    @apply py-[30px] font-primary text-md transition-all ease-in-out delay-150 uppercase hover:cursor-pointer text-primary-200;
+                }
+            }
+        }
+
+        &.showMenu {
+            .mobileMenu {
+                @apply right-0;
+            }
         }
     }
     .hamburger {

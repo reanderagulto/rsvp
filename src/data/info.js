@@ -153,8 +153,16 @@ export const pageInfo = {
     rsvp: {
         title: 'RSVP', 
         paragraphs: [
-            '<strong>The standard Lorem Ipsum passage, used since the 1500s</strong> <br/>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e iusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea co mmodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit e sse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
+            '<strong>The standard Lorem Ipsum passage, used since the 1500s</strong> <br/>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e iusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ',
         ]
     },
-    gallery: [slide01, slide02, slide03, slide04, slide05, slide06, slide07, slide08, slide09, slide10, slide11]
+    gallery: [slide01, slide02, slide03, slide04, slide05, slide06, slide07, slide08, slide09, slide10, slide11], 
+    guests: [
+        {
+
+        }, 
+        {
+            
+        }
+    ]
 }

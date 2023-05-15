@@ -34,7 +34,9 @@ const Navigation = () => {
     >
         <div className={clsx(cx.container, 'container')}>
             <div className={cx.logo}>
-                <img src={logo} className='fluid' alt="Jeni x Reander Logo"/>
+                <a href="/">
+                    <img src={logo} className='fluid' alt="Jeni x Reander Logo"/>
+                </a>
             </div>
             <nav>
                 <div className={cx.desktop}>
@@ -50,7 +52,7 @@ const Navigation = () => {
                         })}
                     </ul>
                 </div>
-                <div className={clsx(cx.mobile, hamburger === true && 'show-menu')}>
+                <div className={clsx(cx.mobile, hamburger === true && cx.showMenu)}>
                     <div 
                         className={clsx(cx.hamburger)}
                         onClick={handleHamburger}
@@ -59,7 +61,31 @@ const Navigation = () => {
                         <span></span>
                         <span></span>
                     </div>
-                    
+                    <div className={cx.mobileMenu}>
+                        <div className={cx.closeWrapper}>
+                            <div 
+                                className={cx.close}
+                                onClick={handleHamburger}
+                            >
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <ul className={cx.nav}>
+                            {pageInfo.menu.map((item, index) => {
+                                return ( 
+                                    <li key={index} className={cx.item}>
+                                        <a 
+                                            href={item.link}
+                                            onClick={handleHamburger}
+                                        >
+                                            {item.title}
+                                        </a>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </div>

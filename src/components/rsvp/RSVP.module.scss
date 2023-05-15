@@ -1,0 +1,28 @@
+.wrapper {
+    @apply py-[44px];
+}
+
+.container {
+    h2 {
+        @apply font-heading text-xl text-primary-200 text-center drop-shadow-xl;
+    }
+
+    .content {
+        @apply w-full mt-[29px] text-center font-primary text-xsm md:w-[409px] m-auto;
+
+        p {
+            strong {
+                @apply block;
+            }
+        }
+    }
+}
+
+.controlContainer {
+    @apply w-full md:w-[43.4375rem] m-auto mt-[34px];
+
+    .control {
+        all: unset;
+        @apply w-full h-[65px] bg-primary-200 rounded-md border-none text-white-200 font-secondary text-md px-[21px] py-[12px] transition-all duration-300 ease-in-out;
+    }
+}
