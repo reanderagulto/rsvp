@@ -6,7 +6,7 @@ import parse from 'html-react-parser'
 import * as cx from './Location.module.scss'
 
 // Data
-import { pageInfo } from '@data/info'
+import { pageInfo } from '@data'
 
 const Location = () => {
   return (

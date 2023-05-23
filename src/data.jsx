@@ -1,3 +1,6 @@
+import db from './firebase-config'
+import firebase from 'firebase/compat/app';
+
 import slide01 from '@images/slider/slide01.jpg'
 import slide02 from '@images/slider/slide02.jpg'
 import slide03 from '@images/slider/slide03.jpg'
@@ -159,10 +162,20 @@ export const pageInfo = {
     gallery: [slide01, slide02, slide03, slide04, slide05, slide06, slide07, slide08, slide09, slide10, slide11], 
     guests: [
         {
-
+            first_name: 'Reander',
+            last_name: 'Agulto'
         }, 
         {
-            
-        }
+            first_name: 'Julienne Anne',
+            last_name: 'Imperial'
+        }, 
+        {
+            first_name: 'Ma. Juliana',
+            last_name: 'Imperial'
+        }, 
+        {
+            first_name: 'Ricardo',
+            last_name: 'Imperial'
+        }, 
     ]
 }

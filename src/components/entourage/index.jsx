@@ -6,7 +6,7 @@ import * as cx from './Entourage.module.scss'
 import arrow from '@svg/arrow.svg'
 
 // Data
-import { pageInfo } from '@data/info.js'
+import { pageInfo } from '@data'
 
 const Entourage = () => {
 

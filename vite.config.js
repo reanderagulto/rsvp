@@ -10,7 +10,7 @@ export default defineConfig({
       '@assets': "/src/assets",
       '@components': "/src/components",
       '@layout': "/src/layout",
-      '@data': "/src/data",
+      '@data': "/src/data.jsx",
       '@images': "/src/assets/images",
       '@svg': "/src/assets/svg"
     },

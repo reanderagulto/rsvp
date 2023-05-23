@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import parse from 'html-react-parser'
 
 // Data
-import { pageInfo } from '@data/info.js'
+import { pageInfo } from '@data'
 
 // Assets
 import * as cx from './Banner.module.scss'

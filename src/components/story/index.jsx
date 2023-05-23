@@ -8,7 +8,7 @@ import * as cx from './Story.module.scss'
 import header from '@images/header.png'
 
 // Data
-import { pageInfo } from '@data/info'
+import { pageInfo } from '@data'
 
 const Story = () => {
   return (

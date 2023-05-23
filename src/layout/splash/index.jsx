@@ -8,7 +8,7 @@ import footer from '@images/footer.png'
 import bigLogo from '@images/logo.png'
 
 // Data
-import { pageInfo } from '@data/info'
+import { pageInfo } from '@data'
 
 const SplashScreen = () => {
   return (
