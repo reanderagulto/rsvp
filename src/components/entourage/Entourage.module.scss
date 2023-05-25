@@ -20,7 +20,7 @@
         }
 
         .content {
-            @apply max-h-[100vh];
+            @apply max-h-[100vh] overflow-scroll;
         }
     }
 

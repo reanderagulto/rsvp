@@ -12,10 +12,12 @@ import Entourage from '@components/entourage'
 import Location from '@components/location'
 import DressCode from '@components/dress'
 import RSVP from '@components/rsvp'
+import Footer from '@components/footer'
+import footerImg from '@images/footer.png'
 
 const Page = () => {
   return (
-    <div>
+    <div className={cx.wrapper}>
         <Navigation />
         <main>
             <Banner />
@@ -25,6 +27,11 @@ const Page = () => {
             <DressCode />
             <RSVP />
         </main>
+        <Footer />
+        <div 
+          className={cx.footerImage} 
+          style={{backgroundImage: `url(${footerImg})`}} 
+        />
     </div>
   )
 }

@@ -31,18 +31,7 @@ const Entourage = () => {
                     </div>
                     <div className={cx.content}>
                         <div className={cx.innerContainer}>
-                            <div className={cx.flexWrap}>
-                                <div className={cx.inner}>
-                                    <h3><strong><em>Bride</em></strong></h3>
-                                    <p>{pageInfo.entourage.parents.bride.father}</p>
-                                    <p>{pageInfo.entourage.parents.bride.mother}</p>
-                                </div>
-                                <div className={cx.inner}>
-                                    <h3><strong><em>Groom</em></strong></h3>
-                                    <p>{pageInfo.entourage.parents.groom.father}</p>
-                                    <p>{pageInfo.entourage.parents.groom.mother}</p>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
