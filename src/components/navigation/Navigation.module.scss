@@ -9,9 +9,7 @@
         }
         
         .hamburger {
-            span {
-                @apply bg-primary-200;
-            }
+            @apply text-primary-200;
         }
     }
 }
@@ -76,7 +74,7 @@ nav {
         }
     }
     .hamburger {
-        @apply block hover:cursor-pointer rotate-[180deg];
+        @apply block hover:cursor-pointer text-white-200 font-primary text-md;
         span{
             @apply block relative content-[''] w-[3.5rem] h-[0.375rem] rounded-sm my-[0.5625rem] bg-white-200;
             

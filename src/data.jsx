@@ -57,84 +57,98 @@ export const pageInfo = {
         },
         principals: [
             {
-                name: 'Ericson V. Yu', 
+                name: 'Francis Saturnino V. Juan',
+                position: 'Atty.', 
                 gender: 'male'
             }, 
             {
-                name: 'Techie Manaligod',
-                gender: 'female',
-            },
-            {
-                name: 'Francis Saturnino Juan',
-                position: 'Atty.',
+                name: 'Ericson O. Yu',
+                position: 'Mr.', 
                 gender: 'male'
             },
             {
-                name: 'Minerva Hollman',
-                position: 'Dr.',
+                name: 'Claudio David R. Castro',
+                position: 'Mr.', 
+                gender: 'male'
+            },
+            {
+                name: 'Ranulfo M. Campugan',
+                position: 'Mr.', 
+                gender: 'male'
+            },
+            {
+                name: 'Minerva J. Hollmann',
+                position: 'Dra.', 
                 gender: 'female'
-            },
+            },    
             {
-                name: 'Jojo Castro', 
-                gender: 'male',
-            },
-            {
-                name: 'Mrs. Pandy', 
+                name: 'Ma. Theresa M. Manaligod',
+                position: 'Mrs.', 
                 gender: 'female'
             }, 
             {
-                name: 'Arnold Campugan',
-                gender: 'male'
+                name: 'Leonila Matilde Pandy',
+                position: 'Mrs.', 
+                gender: 'female'
             },
+            {
+                name: 'Vicel Azada-Buenaobra',
+                position: 'Mrs.', 
+                gender: 'female'
+            },  
         ],
         secondary: [
             {
-                name: 'Frangelico Pandy', 
-                role: 'Best Man/Scripture Reading'
+                name: 'Mr. Frangelico Pandy', 
+                role: 'best man'
             }, 
             {
-                name: 'Janbret Salandanan', 
-                role: 'Groomsman/Candle'
+                name: 'Mrs. Regine Anne Del-Rosario',
+                role: 'matron'
             }, 
             {
-                name: 'Hannah Bajao', 
-                role: 'Maid of Honor/Candle'
-            }, 
-            {
-                name: 'Juan Paolo Imperial', 
-                role: 'Groomsman/Ring Bearer'
-            }, 
-            {
-                name: 'Keith Lundgren Salandanan', 
-                role: 'Groomsman/Coin Bearer'
-            }, 
-            {
-                name: 'Jerome Atkins', 
-                role: 'Groomsman/Cord/Flower Boy'
+                name: 'Mr. Jan Bret Salandanan',
+                role: 'veil',
             },
             {
-                name: 'Alyssa  Khyle Mendoza', 
-                role: 'Bridesmaid/Cord/Flower Girl'
+                name: 'Ms. Leeyan Nicole Agulto',
+                role: 'veil'
             },
             {
-                name: 'Luigi Riego', 
-                role: 'Groomsmen/Veil'
+                name: 'Mr. Jerome Atkins',
+                role: 'candle'
             },
             {
-                name: 'Fearlyn Mae Studenski', 
-                role: 'Bridesmaid/Veil'
+                name: 'Ms. Hannah Bajao',
+                role: 'candle'
             },
             {
-                name: 'Leeyan Nicole Agulto', 
-                role: 'Bridesmaid'
+                name: 'Mr. Luigi Riego',
+                role: 'cord'
             },
             {
-                name: 'Sydney Salvoza', 
-                role: 'Bridesmaid/Bible Bearer'
+                name: 'Ms. Fearlyn Mae Studenski',
+                role: 'cord'
             },
             {
-                name: 'Regine Imperial-Del Rosario', 
-                role: 'Matron of Honor'
+                name: 'Mr. Juan Paolo Imperial',
+                role: 'ring bearer'
+            },
+            {
+                name: 'Mr. Keith Salandanan',
+                role: 'coin bearer'
+            },  
+            {
+                name: 'Ms. Sydney Salvoza',
+                role: 'bible bearer'
+            },
+            {
+                name: 'Mr. Chabi Imperial',
+                role: 'flower dogs'
+            },
+            {
+                name: 'Mr. Dylan Baby Luke Imperial',
+                role: 'flower dogs'
             },
         ]
     },
@@ -160,6 +174,74 @@ export const pageInfo = {
         ]
     },
     gallery: [slide01, slide02, slide03, slide04, slide05, slide06, slide07, slide08, slide09, slide10, slide11], 
+    galleryItems: [
+        {
+            original: slide01,
+            thumbnail: slide01,
+            thumbnailWidth: '150px', 
+            thumbnailHeight: '150px',
+        },
+        {
+            original: slide02,
+            thumbnail: slide02,
+            thumbnailWidth: '150px', 
+            thumbnailHeight: '150px',
+        },
+        {
+            original: slide03,
+            thumbnail: slide03,
+            thumbnailWidth: '150px', 
+            thumbnailHeight: '150px',
+        },
+        {
+            original: slide04,
+            thumbnail: slide04,
+            thumbnailWidth: '150px', 
+            thumbnailHeight: '150px',
+        },
+        {
+            original: slide05,
+            thumbnail: slide05,
+            thumbnailWidth: '150px', 
+            thumbnailHeight: '150px',
+        },
+        {
+            original: slide06,
+            thumbnail: slide06,
+            thumbnailWidth: '150px', 
+            thumbnailHeight: '150px',
+        },
+        {
+            original: slide07,
+            thumbnail: slide07,
+            thumbnailWidth: '150px', 
+            thumbnailHeight: '150px',
+        },
+        {
+            original: slide08,
+            thumbnail: slide08,
+            thumbnailWidth: '150px', 
+            thumbnailHeight: '150px',
+        },
+        {
+            original: slide09,
+            thumbnail: slide09,
+            thumbnailWidth: '150px', 
+            thumbnailHeight: '150px',
+        },
+        {
+            original: slide10,
+            thumbnail: slide10,
+            thumbnailWidth: '150px', 
+            thumbnailHeight: '150px',
+        },
+        {
+            original: slide11,
+            thumbnail: slide11,
+            thumbnailWidth: '150px', 
+            thumbnailHeight: '150px',
+        },
+    ],
     guests: [
         {
             first_name: 'Reander',
@@ -178,4 +260,8 @@ export const pageInfo = {
             last_name: 'Imperial'
         }, 
     ]
+}
+
+export const firebaseData = {
+    
 }

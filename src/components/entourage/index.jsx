@@ -18,6 +18,28 @@ const Entourage = () => {
     const handlePrincipal = () => setPrincipal(!principal)
     const handleSecondary = () => setSecondary(!secondary)
 
+    const primaryMale = pageInfo.entourage.principals.filter((item) => {
+        return item.gender == 'male'
+    })
+    
+    const primaryFemale = pageInfo.entourage.principals.filter((item) => {
+        return item.gender == 'female'
+    })
+
+    const veil = pageInfo.entourage.secondary.filter((item) => {
+        return item.role == 'veil'
+    })
+
+    const candle = pageInfo.entourage.secondary.filter((item) => {
+        return item.role == 'candle'
+    })
+
+    const cord = pageInfo.entourage.secondary.filter((item) => {
+        return item.role == 'cord'
+    })
+
+    console.log(veil, candle, cord);
+
     return (
         <section className={clsx(cx.wrapper)} id="info">
             <div className={clsx(cx.container, 'container')}>
@@ -31,7 +53,16 @@ const Entourage = () => {
                     </div>
                     <div className={cx.content}>
                         <div className={cx.innerContainer}>
-                            
+                            <div className={cx.inner}>
+                                <h3><strong><em>Bride</em></strong></h3>
+                                <p>{pageInfo.entourage.parents.bride.father}</p>
+                                <p>{pageInfo.entourage.parents.bride.mother}</p>
+                            </div>
+                            <div className={cx.inner}>
+                                <h3><strong><em>Groom</em></strong></h3>
+                                <p>{pageInfo.entourage.parents.groom.father}</p>
+                                <p>{pageInfo.entourage.parents.groom.mother}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -44,15 +75,24 @@ const Entourage = () => {
                     </div>
                     <div className={cx.content}>
                         <div className={cx.innerContainer}>
-                            <div className={cx.flexWrap}>
-                            {pageInfo.entourage.principals.map((item, index) => {
-                                return (
-                                <div className={cx.principal} key={index}>
-                                    <h4>{item.position && `${item.position} `}{item.name}</h4>
-                                </div>
-                                )
-                            })}
-                        </div>
+                            <div className={cx.inner}>
+                                {primaryMale && primaryMale.map((item, index) => {
+                                    return (
+                                    <div className={cx.principal} key={index}>
+                                        <h4>{item.position && `${item.position} `}{item.name}</h4>
+                                    </div>
+                                    )
+                                })}
+                            </div>
+                            <div className={cx.inner}>
+                                {primaryFemale && primaryFemale.map((item, index) => {
+                                    return (
+                                    <div className={cx.principal} key={index}>
+                                        <h4>{item.position && `${item.position} `}{item.name}</h4>
+                                    </div>
+                                    )
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -65,16 +105,32 @@ const Entourage = () => {
                     </div>
                     <div className={cx.content}>
                         <div className={cx.innerContainer}>
-                            <div className={cx.flexWrap}>
-                                {pageInfo.entourage.secondary.map((item, index) => {
-                                    return (
-                                    <div className={cx.secondaryContainer} key={index}>
-                                        <p>
-                                            <strong><em>{`${item.role}:`}</em></strong>
-                                            <span>{item.name}</span>
-                                        </p>
-                                    </div>
-                                    )
+                            <div className={cx.inner}>
+                                <h3><strong><em>Best Man</em></strong></h3>
+                                <p>{pageInfo.entourage.secondary[0].name}</p>
+                            </div>
+                            <div className={cx.inner}>
+                                <h3><strong><em>Matron of Honor</em></strong></h3>
+                                <p>{pageInfo.entourage.secondary[0].name}</p>
+                            </div>
+                        </div>
+                        <div className={cx.innerContainerTight}>
+                            <div className={cx.innerCenter}>
+                                <h3><strong><em>Veil</em></strong></h3>
+                                {veil && veil.map((item, index) => {
+                                    return (<p key={index}>{item.name}</p>)
+                                })}
+                            </div>
+                            <div className={cx.innerCenter}>
+                                <h3><strong><em>Candle</em></strong></h3>
+                                {candle && candle.map((item, index) => {
+                                    return (<p key={index}>{item.name}</p>)
+                                })}
+                            </div>
+                            <div className={cx.innerCenter}>
+                                <h3><strong><em>Cord</em></strong></h3>
+                                {cord && cord.map((item, index) => {
+                                    return (<p key={index}>{item.name}</p>)
                                 })}
                             </div>
                         </div>

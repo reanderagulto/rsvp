@@ -20,7 +20,7 @@
         }
 
         .content {
-            @apply max-h-[100vh] overflow-scroll;
+            @apply max-h-[fit-content] overflow-y-scroll md:overflow-visible;
         }
     }
 
@@ -43,20 +43,29 @@
             @apply block mt-[0.625rem];
         }
         .innerContainer {
-            @apply w-[85%] m-auto px-[1.125rem] py-[1.875rem];
+            @apply w-[85%] gap-[30px] m-auto px-[1.125rem] py-[1.875rem] flex flex-col items-center justify-center md:flex-row md:gap-[60px];
+
+            &Tight {
+                @apply w-[85%] gap-[15px] m-auto px-[1.125rem] py-[1.875rem] flex flex-col items-center justify-center md:flex-row md:gap-[25px];
+
+                .innerCenter {
+                    @apply text-center;
+                }
+            }
+
+            .inner {
+                &:nth-of-type(1) {
+                    @apply text-center md:text-right;
+                }
+
+                &:nth-of-type(2) {
+                    @apply text-center md:text-left;
+                }
+            }
         }
 
-        .flexWrap {
-            @apply flex flex-wrap items-start justify-evenly;
-            .principal {
-                @apply grow shrink basis-[12.5rem] my-[0.625rem];
-            }
-            .secondaryContainer {
-                @apply grow shrink basis-[12.5rem] my-[0.625rem];
-            }
-            .inner {
-                @apply grow shrink basis-[12.5rem] my-[0.625rem];
-            }
+        .principal {
+            @apply py-[10px];
         }
     }
 

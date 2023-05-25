@@ -57,9 +57,7 @@ const Navigation = () => {
                         className={clsx(cx.hamburger)}
                         onClick={handleHamburger}
                     >
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        Menu
                     </div>
                     <div className={cx.mobileMenu}>
                         <div className={cx.closeWrapper}>

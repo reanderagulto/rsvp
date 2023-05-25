@@ -1,9 +1,10 @@
 import React from 'react'
 import parse from 'html-react-parser'
-import { Splide, SplideSlide } from '@splidejs/react-splide'
 import clsx from 'clsx'
+import ImageGallery from 'react-image-gallery';
 
 // Assets
+import './react-gallery.scss'
 import * as cx from './Story.module.scss'
 import header from '@images/header.png'
 
@@ -29,8 +30,15 @@ const Story = () => {
                         )
                     })}
                 </div>
-                <div className={cx.slider}>
-                    <img className={cx.item} src={pageInfo.gallery[0]} alt="" />
+                <div className={clsx(cx.slider, 'container')}>
+                    <ImageGallery 
+                        items={pageInfo.galleryItems} 
+                        infinite={true}
+                        showNav={true}
+                        showFullscreenButton={true}
+                        showBullets={true}
+                        showPlayButton={false}
+                    />
                 </div>
             </div>
         </div>

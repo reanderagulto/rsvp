@@ -11,16 +11,24 @@ import { pageInfo } from '@data'
 const RSVP = () => {
 
   const [results, setResults] = useState([])
+  const [typed, setTyped] = useState(false)
 
   const handleChange = (e) => {
     let data = []
     if(e.target.value === ''){
       data = []
+      setTyped(false)
     }
     else {
        data = pageInfo.guests.filter((item) => {
         return item.last_name.toLowerCase().match(e.target.value.toLowerCase())
       })
+      if(data.length > 0){
+        setTyped(true)
+      }
+      else {
+        setTyped(false)
+      }
     }
     setResults(data)
   }
@@ -41,7 +49,7 @@ const RSVP = () => {
                 type="text"
                 name="rsvp-search"
                 id="rsvp-search" 
-                className={cx.control} 
+                className={clsx(cx.control, typed && cx.active)} 
                 placeholder='Last Name'
                 onChange={handleChange}
               />

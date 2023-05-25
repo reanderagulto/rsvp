@@ -19,11 +19,15 @@
 }
 
 .controlContainer {
-    @apply flex items-center justify-center flex-col mt-[34px];
+    @apply flex items-center justify-center flex-col mt-[34px] md:w-[695px];
 
     .control {
         all: unset;
-        @apply h-[35px] mx-auto block w-auto text-[0.85rem] bg-primary-200 rounded-md border-none text-white-200 font-secondary px-[21px] py-[12px] transition-all duration-300 ease-in-out md:text-md md:h-[65px] md:w-[695px];
+        @apply h-[35px] min-w-full w-auto block text-[0.85rem] bg-primary-200 rounded-md border-none text-white-200 font-secondary indent-[21px] py-[12px] transition-all duration-300 ease-in-out md:text-md md:h-[65px];
+
+        &.active{
+            @apply rounded-b-none;
+        }
     }
 }
 
@@ -31,7 +35,7 @@
     @apply w-0 max-h-0 bg-primary-100 text-[0.85rem] rounded-b-sm text-white-200 font-secondary transition-max-height duration-300 ease-linear md:text-md px-[21px] py-[12px] opacity-0;
 
     &.active {
-        @apply w-[100vw] min-h-full max-h-[100vh] h-auto md:w-[695px] opacity-100;
+        @apply w-full min-h-full max-h-[100vh] h-auto opacity-100;
 
         div {
             @apply py-[11px];
