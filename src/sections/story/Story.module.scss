@@ -20,4 +20,15 @@
             @apply block;
         }
     }
+    
+    .contentInner {
+        &:nth-of-type(1) {
+            @apply w-full md:w-[50%];
+        }
+
+        &:nth-of-type(2) {
+            @apply w-full md:w-[50%];
+        }
+    }
+    
 }

@@ -1,0 +1,54 @@
+.wrapper {
+    @apply py-[44px];
+}
+
+.container {
+    h2 {
+        @apply font-heading text-xl text-primary-200 text-center drop-shadow-xl;
+    }
+
+    .content {
+        @apply w-full mt-[29px] text-center font-primary text-xsm md:w-[409px] m-auto;
+
+        p {
+            strong {
+                @apply block;
+            }
+        }
+    }
+}
+
+.controlContainer {
+    @apply flex items-center justify-center flex-col mt-[34px] md:w-[695px];
+
+    .control {
+        all: unset;
+        @apply h-[35px] min-w-full w-auto block text-[0.85rem] bg-primary-200 rounded-md border-none text-white-200 font-secondary indent-[21px] py-[12px] transition-all duration-300 ease-in-out md:text-xsm md:h-[45px];
+
+        &.active{
+            @apply rounded-b-none;
+        }
+    }
+}
+
+.resultsContainer {
+    @apply w-0 max-h-0 bg-primary-100 text-[0.85rem] text-white-200 font-secondary transition-max-height duration-300 ease-linear md:text-xsm px-[21px] py-[12px] opacity-0 overflow-y-scroll;
+
+    &.active {
+        @apply w-full min-h-full max-h-[200px] h-auto opacity-100;
+
+        div {
+            @apply flex items-center justify-start gap-[6px] py-[8px];
+
+            input[type="checkbox"] {
+                &.checkbox {
+                    @apply w-[20px] h-[20px] rounded-sm;
+    
+                }
+                &:checked {
+                    @apply accent-secondary;
+                }
+            }
+        }
+    }
+}

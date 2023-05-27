@@ -23,14 +23,14 @@ const Story = () => {
         <div className={clsx(cx.container, 'container')}>
             <h2 className='text-center'>{pageInfo.story.title}</h2>
             <div className={cx.content}>
-                <div className={cx.innner}>
+                <div className={clsx(cx.innner, cx.contentInner)}>
                     {pageInfo.story.paragraphs.map((item, index) => {
                         return (
                             <p key={index}>{parse(item)}</p>
                         )
                     })}
                 </div>
-                <div className={clsx(cx.slider, 'container')}>
+                <div className={clsx(cx.slider, cx.contentInner)}>
                     <ImageGallery 
                         items={pageInfo.galleryItems} 
                         infinite={true}

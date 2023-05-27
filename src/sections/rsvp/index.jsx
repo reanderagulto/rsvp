@@ -12,6 +12,7 @@ const RSVP = () => {
 
   const [results, setResults] = useState([])
   const [typed, setTyped] = useState(false)
+  const [rsvp, setRsvp] = useState([])
 
   const handleChange = (e) => {
     let data = []
@@ -19,9 +20,10 @@ const RSVP = () => {
       data = []
       setTyped(false)
     }
-    else {
-       data = pageInfo.guests.filter((item) => {
-        return item.last_name.toLowerCase().match(e.target.value.toLowerCase())
+    else {        
+      let re = new RegExp('^' + e.target.value.toLowerCase())
+      data = pageInfo.guests.filter((item) => {
+        return item.last_name.toLowerCase().match(re)
       })
       if(data.length > 0){
         setTyped(true)
@@ -31,6 +33,17 @@ const RSVP = () => {
       }
     }
     setResults(data)
+  }
+
+  const handleCheck = (e, name) => {
+    if(e.target.checked) {
+      rsvp.push(name)
+    }      
+    else {
+      rsvp.splice(rsvp.indexOf(name), 1)
+    }
+      
+    console.log(rsvp)
   }
 
   return (
@@ -61,7 +74,17 @@ const RSVP = () => {
               >
                   {results.length > 0 && results.map((item, index) => {
                     return (
-                      <div key={index}>{item.first_name} {item.last_name}</div>
+                      <div key={index}>
+                        <input 
+                          type="checkbox" 
+                          className={cx.checkbox} 
+                          onClick={
+                            (e) => { 
+                              handleCheck(e, `${item.first_name.toLowerCase()}-${item.last_name.toLowerCase()}`)
+                            }
+                          }/>
+                        <span>{item.first_name} {item.last_name}</span>
+                      </div>
                     )
                   })}
               </div>
