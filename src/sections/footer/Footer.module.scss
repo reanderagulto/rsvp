@@ -1,0 +1,13 @@
+footer {
+    .container {
+        @apply flex flex-col items-center justify-center gap-[0.4375rem] pt-[4.125rem] pb-[7.0625rem];
+    }
+
+    .logo {
+        @apply w-[4.5625rem] h-[3.75rem] rounded-lg;
+    }
+
+    h3 {
+        @apply text-black text-[1.875rem] font-heading drop-shadow-lg;
+    }
+}

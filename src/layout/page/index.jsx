@@ -4,18 +4,20 @@ import clsx from 'clsx'
 // Assets
 import * as cx from './Page.module.scss'
 
-// Components
-import Navigation from '@components/navigation'
-import Banner from '@components/banner'
-import Story from '@components/story'
-import Entourage from '@components/entourage'
-import Location from '@components/location'
-import DressCode from '@components/dress'
-import RSVP from '@components/rsvp'
+// sections
+import Navigation from '@sections/navigation'
+import Banner from '@sections/banner'
+import Story from '@sections/story'
+import Entourage from '@sections/entourage'
+import Location from '@sections/location'
+import DressCode from '@sections/dress'
+import RSVP from '@sections/rsvp'
+import Footer from '@sections/footer'
+import footerImg from '@images/footer.png'
 
 const Page = () => {
   return (
-    <div>
+    <div className={cx.wrapper}>
         <Navigation />
         <main>
             <Banner />
@@ -25,6 +27,11 @@ const Page = () => {
             <DressCode />
             <RSVP />
         </main>
+        <Footer />
+        <div 
+          className={cx.footerImage} 
+          style={{backgroundImage: `url(${footerImg})`}} 
+        />
     </div>
   )
 }

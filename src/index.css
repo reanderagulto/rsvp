@@ -35,3 +35,18 @@ html {
 body {
   @apply m-0 min-h-[100vh];
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #446070; 
+}

@@ -3,7 +3,7 @@
 }
 
 .mask {
-    @apply bg-no-repeat bg-cover bg-top content-[''] absolute -top-[180px] left-0 w-[100%] h-[800px] -z-[1];
+    @apply bg-no-repeat bg-left bg-cover bg-top content-[''] absolute -top-[180px] left-0 w-[100%] h-[800px] -z-[1];
 }
 
 .container {
@@ -20,8 +20,15 @@
             @apply block;
         }
     }
-}
+    
+    .contentInner {
+        &:nth-of-type(1) {
+            @apply w-full md:w-[50%];
+        }
 
-.controlContainer {
+        &:nth-of-type(2) {
+            @apply w-full md:w-[50%];
+        }
+    }
     
 }

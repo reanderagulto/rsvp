@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { pageInfo } from '@data/info'
+import { pageInfo } from '@data'
 import clsx from 'clsx'
 import * as cx from './Navigation.module.scss'
 import logo from '@images/logo-sm.png'
@@ -57,9 +57,7 @@ const Navigation = () => {
                         className={clsx(cx.hamburger)}
                         onClick={handleHamburger}
                     >
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        Menu
                     </div>
                     <div className={cx.mobileMenu}>
                         <div className={cx.closeWrapper}>

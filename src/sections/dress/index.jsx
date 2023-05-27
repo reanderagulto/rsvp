@@ -6,7 +6,7 @@ import parse from 'html-react-parser'
 import * as cx from './Dress.module.scss'
 
 // Data
-import { pageInfo } from '@data/info'
+import { pageInfo } from '@data'
 
 const DressCode = () => {
   return (
