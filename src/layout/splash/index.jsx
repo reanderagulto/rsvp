@@ -1,6 +1,7 @@
 import React from 'react'
 import * as cx from './Splash.module.scss'
 import clsx from 'clsx'
+import parse from 'html-react-parser'
 
 // Images
 import header from '@images/header.png'
@@ -18,7 +19,7 @@ const SplashScreen = () => {
         <div className={cx.content}>
           <img src={bigLogo} alt="Jeni x Reander Nuptial" />
           <h1>{pageInfo.banner.title}</h1>
-          <h4>{pageInfo.banner.coming_soon}</h4>
+          <h4>{parse(pageInfo.banner.coming_soon)}</h4>
         </div>
       </div>
       <div className={clsx(cx.footer, cx.headings)} style={{backgroundImage: `url(${footer})`}}>

@@ -28,7 +28,7 @@
             @apply text-xl m-[unset] text-primary-200 mt-[0.625rem] text-primary-100 font-heading leading-[6.6875rem] tracking-[0.06rem] drop-shadow-xxl text-center;
         }
         h4{
-            @apply font-secondary text-sm -mt-[0.625rem] text-center text-primary-100;
+            @apply font-secondary text-xsm mt-[0.625rem] text-center text-primary-100 md:text-sm;
         }
     }
 }

@@ -52,3 +52,38 @@
         }
     }
 }
+
+.rsvpResultsContainer {
+    @apply flex items-center flex-wrap w-0 max-h-0 bg-white-300 text-white-200 font-secondary transition-max-height duration-300 ease-linear md:text-xsm px-[21px] py-[12px] opacity-0 gap-[5px];
+
+    &.active {
+        @apply w-full min-h-full max-h-[100vh] h-auto opacity-100;
+    }
+
+    .rsvpItem {
+        @apply flex items-center text-[12px] bg-primary-200 rounded-sm p-[5px] relative gap-[10px];
+
+        div { 
+            @apply cursor-pointer;
+        } 
+
+    }
+}
+
+.buttonContainer { 
+    @apply flex flex-col items-center justify-start md:justify-center gap-[5px] mt-[10px] md:gap-[20px] md:flex-row;
+
+    .btnOption {
+        span {
+            &[class~='MuiFormControlLabel-label'] {
+                @apply font-secondary text-primary-200 text-[15px];
+            }
+        }
+
+        [class~='MuiRadio-root'] {
+            &[class~='Mui-checked'] {
+                @apply text-primary-200;
+            }
+        } 
+    }
+}

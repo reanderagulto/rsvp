@@ -34,7 +34,7 @@ export const pageInfo = {
         date: 'September 23, 2023', 
         time: '3:00 PM',
         location: 'Villa Juliana Resort<span>Tayabas, Quezon</span>',
-        coming_soon: 'Coming Soon',
+        coming_soon: 'Our RSVP Website will be launch <br /> on June 3, 2023 <br />Stay Tuned!',
     }, 
     story: {
         title: 'Our Story', 
@@ -170,7 +170,8 @@ export const pageInfo = {
     rsvp: {
         title: 'RSVP', 
         paragraphs: [
-            'We would love to know if you can join us on our special day? Please respond before <b><u>August 14</u></b>',
+            'We would love to know if you can join us on our special day? Please respond before <b><u>August 14</u></b><br />',
+            '<span>Just search your <i><b>Last Name</b></i>, check it, then submit your response</span>'
         ]
     },
     gallery: [slide01, slide02, slide03, slide04, slide05, slide06, slide07, slide08, slide09, slide10, slide11], 
