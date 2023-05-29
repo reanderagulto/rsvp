@@ -1,5 +1,6 @@
-import db from './firebase-config'
+// import { collection, getDocs } from "firebase/firestore";
 import firebase from 'firebase/compat/app';
+import db from './firebase-config'
 
 import slide01 from '@images/slider/slide01.jpg'
 import slide02 from '@images/slider/slide02.jpg'
@@ -12,6 +13,8 @@ import slide08 from '@images/slider/slide08.jpg'
 import slide09 from '@images/slider/slide09.jpg'
 import slide10 from '@images/slider/slide10.jpg'
 import slide11 from '@images/slider/slide11.jpg'
+
+const pageInfoCollection = 'pageInfo'
 
 export const pageInfo = {
     menu: [
@@ -171,6 +174,7 @@ export const pageInfo = {
         title: 'RSVP', 
         paragraphs: [
             'We would love to know if you can join us on our special day? Please respond before <b><u>August 14</u></b><br />',
+            '<br />',
             '<span>Just search your <i><b>Last Name</b></i>, check it, then submit your response</span>'
         ]
     },
@@ -271,6 +275,21 @@ export const pageInfo = {
     ]
 }
 
-export const firebaseData = {
+export const getFirebaseData = () => {
+    let data = {}
+    // const docs = await getDocs(collection(getDb(), 'pageInfo'))
+    // docs.forEach((item, index) => {
+    //     data.push({
+    //         id: item.id, 
+    //         ...item.data()
+    //     })
+    // }) 
+
+    db.collection('pageInfo').onSnapshot(snapshot => {
+        snapshot.docs.map(doc => (
+            Object.assign(data, {id: doc.id, ...doc.data()})
+        ))
+    });
     
+    return data;
 }

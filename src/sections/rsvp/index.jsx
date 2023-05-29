@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import parse from 'html-react-parser'
 import clsx from 'clsx'
 import Button from '@mui/material/Button';
@@ -12,6 +12,8 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
+import TextField from '@mui/material/TextField';
+
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import Stack from '@mui/material/Stack';
@@ -19,12 +21,14 @@ import Stack from '@mui/material/Stack';
 import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
 import EmailIcon from '@mui/icons-material/Email';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Assets
 import * as cx from './RSVP.module.scss'
 
 // Data 
-import { pageInfo } from '@data'
+import { pageInfo, getFirebaseData } from '@data'
 
 const RSVP = () => {
 
@@ -32,12 +36,47 @@ const RSVP = () => {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
   };
 
+  const firebaseData = getFirebaseData()
+
+  console.log(firebaseData)
+
   const [results, setResults] = useState([])
   const [typed, setTyped] = useState(false)
   const [rsvp, setRsvp] = useState([])
   const [clearRadio, setClearRadio] = useState(false)
   const [open, setOpen] = useState(false)
   const [response, setResponse] = useState('')
+  const [email, setEmail] = useState('')
+  const toastId = React.useRef(null);
+
+  const showToast = (objAlert) => {
+    switch(objAlert.status){
+      case 'success':
+        toastId.current = toast.success(objAlert.message, {
+          position: "top-left",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,        
+        });
+        break
+      case 'error':
+        toastId.current = toast.error(objAlert.message, {
+          position: "top-left",
+          hideProgressBar: false,
+          autoClose: 2000,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,        
+        });
+        break
+      default: 
+        break;
+    }
+  }
 
   const handleChange = (e) => {
     let data = []
@@ -78,12 +117,24 @@ const RSVP = () => {
   }
 
   const handleOpen = (e) => {
-    setResponse(e.target.value)
-    setOpen(true)
+    if(rsvp.length > 0) {
+      setResponse(e.target.value)
+      setOpen(true)
+    }    
+    else { 
+      showToast({
+        status: 'error',
+        message: 'Please search for your name on the textbox below'
+      })
+    }
   }
 
   const handleClose = () => {
     setOpen(false)
+  }
+
+  const handleEmail = () => {
+
   }
 
   return (
@@ -178,24 +229,38 @@ const RSVP = () => {
           aria-describedby="alert-dialog-description"
         >
           <DialogTitle id="alert-dialog-title">
-            {"RSVP Confirmation"}
+            {"Confirmation"}
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
               {response === 'going' && 
                 <div>
-                  <p>Your response is received</p>
-                  <p>If you want to receive confirmation please enter your email</p>
-
+                  <div className={cx.dialogContent}>
+                    <p>Your response is received</p>
+                    <p>If you want to receive confirmation please enter your email:</p>
+                  </div>
+                  <div className={cx.dialogControl}>
+                    <TextField 
+                      id="outlined-basic" 
+                      label="Email" 
+                      variant="outlined" 
+                      placeholder='mail@mail.com' 
+                      onChange={(e) => {
+                        console.log(e.target.value);
+                        setEmail(e.target.value)
+                      }}
+                    />
+                  </div>
                 </div>
               }
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose}>Disagree</Button>
-            <Button onClick={handleClose} autoFocus>Agree</Button>
+            <Button onClick={handleClose} autoFocus>Proceed</Button>
+            <Button onClick={handleClose}>Close</Button>
           </DialogActions>
         </Dialog>  
+        <ToastContainer />       
     </section>
   )
 }
