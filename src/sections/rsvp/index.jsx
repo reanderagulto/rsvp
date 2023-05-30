@@ -36,10 +36,6 @@ const RSVP = () => {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
   };
 
-  const firebaseData = getFirebaseData()
-
-  console.log(firebaseData)
-
   const [results, setResults] = useState([])
   const [typed, setTyped] = useState(false)
   const [rsvp, setRsvp] = useState([])

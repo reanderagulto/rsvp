@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import clsx from 'clsx'
 import parse from 'html-react-parser'
 
 // Data
-import { pageInfo } from '@data'
+import { pageInfo, getFirebaseData } from '@data'
 
 // Assets
 import * as cx from './Banner.module.scss'

@@ -38,8 +38,6 @@ const Entourage = () => {
         return item.role == 'cord'
     })
 
-    console.log(veil, candle, cord);
-
     return (
         <section className={clsx(cx.wrapper)} id="info">
             <div className={clsx(cx.container, 'container')}>

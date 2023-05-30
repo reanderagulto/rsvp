@@ -1,4 +1,5 @@
 // import { collection, getDocs } from "firebase/firestore";
+
 import firebase from 'firebase/compat/app';
 import db from './firebase-config'
 
@@ -13,8 +14,6 @@ import slide08 from '@images/slider/slide08.jpg'
 import slide09 from '@images/slider/slide09.jpg'
 import slide10 from '@images/slider/slide10.jpg'
 import slide11 from '@images/slider/slide11.jpg'
-
-const pageInfoCollection = 'pageInfo'
 
 export const pageInfo = {
     menu: [
@@ -275,21 +274,11 @@ export const pageInfo = {
     ]
 }
 
-export const getFirebaseData = () => {
+export const getFirebaseData = (collection, documentId) => {
     let data = {}
-    // const docs = await getDocs(collection(getDb(), 'pageInfo'))
-    // docs.forEach((item, index) => {
-    //     data.push({
-    //         id: item.id, 
-    //         ...item.data()
-    //     })
-    // }) 
+    db.collection(collection).doc(documentId).get().then((snapshot) => {
+        Object.assign(data, snapshot.data())
+    }).catch((e) => console.log(e))
 
-    db.collection('pageInfo').onSnapshot(snapshot => {
-        snapshot.docs.map(doc => (
-            Object.assign(data, {id: doc.id, ...doc.data()})
-        ))
-    });
-    
-    return data;
+    return data
 }
