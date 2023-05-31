@@ -1,8 +1,3 @@
-// import { collection, getDocs } from "firebase/firestore";
-
-import firebase from 'firebase/compat/app';
-import db from './firebase-config'
-
 import slide01 from '@images/slider/slide01.jpg'
 import slide02 from '@images/slider/slide02.jpg'
 import slide03 from '@images/slider/slide03.jpg'
@@ -274,11 +269,11 @@ export const pageInfo = {
     ]
 }
 
-export const getFirebaseData = (collection, documentId) => {
-    let data = {}
-    db.collection(collection).doc(documentId).get().then((snapshot) => {
-        Object.assign(data, snapshot.data())
-    }).catch((e) => console.log(e))
+// export const getFirebaseData = async (collection, documentId) => {
+//     let data = {}
+//     db.collection(collection).doc(documentId).get().then((snapshot) => {
+//         Object.assign(data, snapshot.data())
+//     }).catch((e) => console.log(e))
 
-    return data
-}
+//     return data
+// }

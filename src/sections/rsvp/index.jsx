@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import parse from 'html-react-parser'
 import clsx from 'clsx'
 import Button from '@mui/material/Button';
@@ -28,9 +28,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import * as cx from './RSVP.module.scss'
 
 // Data 
-import { pageInfo, getFirebaseData } from '@data'
+import { pageInfo } from '@data'
 
-const RSVP = () => {
+const RSVP = ({
+  title,
+  paragraphs,
+  guests
+}) => {
 
   String.prototype.toProperCase = function () {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
@@ -82,7 +86,7 @@ const RSVP = () => {
     }
     else {        
       let re = new RegExp('^' + e.target.value.toLowerCase())
-      data = pageInfo.guests.filter((item) => {
+      data = guests.filter((item) => {
         return item.last_name.toLowerCase().match(re) 
       })
       if(data.length > 0){
@@ -136,9 +140,9 @@ const RSVP = () => {
   return (
     <section className={cx.wrapper} id="rsvp">
         <div className={clsx(cx.container, 'container')}>
-          <h2>{pageInfo.rsvp.title}</h2>
+          <h2>{title}</h2>
           <div className={cx.content}>
-            {pageInfo.rsvp.paragraphs && pageInfo.rsvp.paragraphs.map((item, index) => {
+            {paragraphs && paragraphs.map((item, index) => {
               return (
                 <p key={index}>{parse(item)}</p>
               )

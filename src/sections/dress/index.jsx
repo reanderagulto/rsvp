@@ -8,11 +8,15 @@ import * as cx from './Dress.module.scss'
 // Data
 import { pageInfo } from '@data'
 
-const DressCode = () => {
+const DressCode = ({
+    title, 
+    ladies,
+    men
+}) => {
   return (
     <section className={cx.wrapper}>
         <div className={clsx(cx.container, 'container')}>
-            <h2>{pageInfo.dress.title}</h2>
+            <h2>{title}</h2>
             <div className={cx.content}>
                 <div className={cx.sliders}>
                     <div className={cx.sampleSlider}>
@@ -25,11 +29,11 @@ const DressCode = () => {
                 <div className={cx.dressCodeContainer}>
                     <p>
                         <span><strong>Ladies</strong></span>
-                        {parse(pageInfo.dress.code.ladies)}
+                        {parse(ladies)}
                     </p>
                     <p>
                         <span><strong>Men</strong></span>
-                        {pageInfo.dress.code.men}
+                        {men}
                     </p>
                     <div className={cx.colorPalette}>
                         <div className={clsx(cx.item, cx.sageGreen)}></div>

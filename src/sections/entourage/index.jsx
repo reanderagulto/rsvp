@@ -5,10 +5,17 @@ import clsx from 'clsx'
 import * as cx from './Entourage.module.scss'
 import arrow from '@svg/arrow.svg'
 
-// Data
-import { pageInfo } from '@data'
-
-const Entourage = () => {
+const Entourage = ({
+    title, 
+    parentsData,
+    primaryMale,
+    primaryFemale, 
+    veil,
+    cord,
+    candle,
+    bestMan, 
+    matronOfMaids
+}) => {
 
     const [parents, setParents] = useState(false)
     const [principal, setPrincipal] = useState(false)
@@ -18,30 +25,10 @@ const Entourage = () => {
     const handlePrincipal = () => setPrincipal(!principal)
     const handleSecondary = () => setSecondary(!secondary)
 
-    const primaryMale = pageInfo.entourage.principals.filter((item) => {
-        return item.gender == 'male'
-    })
-    
-    const primaryFemale = pageInfo.entourage.principals.filter((item) => {
-        return item.gender == 'female'
-    })
-
-    const veil = pageInfo.entourage.secondary.filter((item) => {
-        return item.role == 'veil'
-    })
-
-    const candle = pageInfo.entourage.secondary.filter((item) => {
-        return item.role == 'candle'
-    })
-
-    const cord = pageInfo.entourage.secondary.filter((item) => {
-        return item.role == 'cord'
-    })
-
     return (
         <section className={clsx(cx.wrapper)} id="info">
             <div className={clsx(cx.container, 'container')}>
-                <h2>{pageInfo.entourage.title}</h2>
+                <h2>{title}</h2>
                 <div className={clsx(cx.accordion, 
                     parents === true && cx.active
                 )}>
@@ -53,13 +40,13 @@ const Entourage = () => {
                         <div className={cx.innerContainer}>
                             <div className={cx.inner}>
                                 <h3><strong><em>Bride</em></strong></h3>
-                                <p>{pageInfo.entourage.parents.bride.father}</p>
-                                <p>{pageInfo.entourage.parents.bride.mother}</p>
+                                <p>{parentsData.bride.father}</p>
+                                <p>{parentsData.bride.mother}</p>
                             </div>
                             <div className={cx.inner}>
                                 <h3><strong><em>Groom</em></strong></h3>
-                                <p>{pageInfo.entourage.parents.groom.father}</p>
-                                <p>{pageInfo.entourage.parents.groom.mother}</p>
+                                <p>{parentsData.groom.father}</p>
+                                <p>{parentsData.groom.mother}</p>
                             </div>
                         </div>
                     </div>
@@ -105,11 +92,11 @@ const Entourage = () => {
                         <div className={cx.innerContainer}>
                             <div className={cx.inner}>
                                 <h3><strong><em>Best Man</em></strong></h3>
-                                <p>{pageInfo.entourage.secondary[0].name}</p>
+                                <p>{bestMan}</p>
                             </div>
                             <div className={cx.inner}>
                                 <h3><strong><em>Matron of Honor</em></strong></h3>
-                                <p>{pageInfo.entourage.secondary[0].name}</p>
+                                <p>{matronOfMaids}</p>
                             </div>
                         </div>
                         <div className={cx.innerContainerTight}>

@@ -1,15 +1,21 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import clsx from 'clsx'
 import parse from 'html-react-parser'
 
-// Data
-import { pageInfo, getFirebaseData } from '@data'
 
 // Assets
 import * as cx from './Banner.module.scss'
 import banner from '@images/topfold-banner.jpg'
 
-const Banner = () => {    
+// Context
+
+const Banner = ({ 
+    title, 
+    subtitle, 
+    date, 
+    time, 
+    location
+}) => {    
     return (
         <section className={cx.wrapper}>
             <div
@@ -21,13 +27,13 @@ const Banner = () => {
                 <div className={clsx(cx.container, 'container')}>
                     <div className={cx.content}>
                         <div className={cx.heading}>
-                            <h1>{pageInfo.banner.title}</h1>
-                            <h2>{pageInfo.banner.subtitle}</h2>
+                            <h1>{title}</h1>
+                            <h2>{subtitle}</h2>
                         </div>
                         <div className={cx.inner}>
-                            <p>{pageInfo.banner.date}<span>{pageInfo.banner.time}</span>
+                            <p>{date}<span>{time}</span>
                             </p>
-                            <p>{parse(pageInfo.banner.location)}</p>
+                            <p>{parse(location)}</p>
                         </div>
                     </div>
                 </div>

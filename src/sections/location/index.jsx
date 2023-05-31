@@ -5,14 +5,16 @@ import parse from 'html-react-parser'
 // Assets
 import * as cx from './Location.module.scss'
 
-// Data
-import { pageInfo } from '@data'
-
-const Location = () => {
+const Location = ({
+    title, 
+    paragraphs, 
+    waze,
+    maps,
+}) => {
   return (
     <section className={cx.wrapper}>
         <div className={clsx(cx.container, 'container')}>
-            <h2>{pageInfo.location.title}</h2>
+            <h2>{title}</h2>
             <div className={cx.contentWrap}>
                 <div className={cx.mapContainer}>
                 <iframe 
@@ -27,14 +29,14 @@ const Location = () => {
                 </div>
                 <div className={cx.content}>
                     <div className={cx.paragraphs}>
-                    {pageInfo.location.paragraphs && pageInfo.location.paragraphs.map((item, index) => {
+                    {paragraphs && paragraphs.map((item, index) => {
                         return (
                             <p key={index}>{parse(item)}</p>
                         )
                     })}
                     </div>
-                    <a className={cx.button} href={pageInfo.location.waze} target='_blank'>Waze</a>
-                    <a className={cx.button} href={pageInfo.location.maps} target='_blank'>Google Maps</a>
+                    <a className={cx.button} href={waze} target='_blank'>Waze</a>
+                    <a className={cx.button} href={maps} target='_blank'>Google Maps</a>
                 </div>
             </div>
         </div>
