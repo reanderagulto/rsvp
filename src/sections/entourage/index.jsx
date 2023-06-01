@@ -13,8 +13,7 @@ const Entourage = ({
     veil,
     cord,
     candle,
-    bestMan, 
-    matronOfMaids
+    bestMaid
 }) => {
 
     const [parents, setParents] = useState(false)
@@ -63,8 +62,8 @@ const Entourage = ({
                             <div className={cx.inner}>
                                 {primaryMale && primaryMale.map((item, index) => {
                                     return (
-                                    <div className={cx.principal} key={index}>
-                                        <h4>{item.position && `${item.position} `}{item.name}</h4>
+                                    <div className={cx.principal} key={index} id={item.id}>
+                                        <h4>{item.title && `${item.title}. `}{item.first_name} {item.middle_initial}. {item.last_name}</h4>
                                     </div>
                                     )
                                 })}
@@ -72,8 +71,8 @@ const Entourage = ({
                             <div className={cx.inner}>
                                 {primaryFemale && primaryFemale.map((item, index) => {
                                     return (
-                                    <div className={cx.principal} key={index}>
-                                        <h4>{item.position && `${item.position} `}{item.name}</h4>
+                                    <div className={cx.principal} key={index} id={item.id} >
+                                        <h4>{item.title && `${item.title}. `}{item.first_name} {item.middle_initial}. {item.last_name}</h4>
                                     </div>
                                     )
                                 })}
@@ -92,30 +91,30 @@ const Entourage = ({
                         <div className={cx.innerContainer}>
                             <div className={cx.inner}>
                                 <h3><strong><em>Best Man</em></strong></h3>
-                                <p>{bestMan}</p>
+                                <p>{`${bestMaid[0].title}. ${bestMaid[0].first_name} ${bestMaid[0].last_name}`}</p>
                             </div>
                             <div className={cx.inner}>
                                 <h3><strong><em>Matron of Honor</em></strong></h3>
-                                <p>{matronOfMaids}</p>
+                                <p>{`${bestMaid[1].title}. ${bestMaid[1].first_name} ${bestMaid[1].last_name}`}</p>
                             </div>
                         </div>
                         <div className={cx.innerContainerTight}>
                             <div className={cx.innerCenter}>
                                 <h3><strong><em>Veil</em></strong></h3>
                                 {veil && veil.map((item, index) => {
-                                    return (<p key={index}>{item.name}</p>)
+                                    return (<p id={item.id} key={index}>{item.first_name} {item.last_name}</p>)
                                 })}
                             </div>
                             <div className={cx.innerCenter}>
                                 <h3><strong><em>Candle</em></strong></h3>
                                 {candle && candle.map((item, index) => {
-                                    return (<p key={index}>{item.name}</p>)
+                                    return (<p id={item.id} key={index}>{item.first_name} {item.last_name}</p>)
                                 })}
                             </div>
                             <div className={cx.innerCenter}>
                                 <h3><strong><em>Cord</em></strong></h3>
                                 {cord && cord.map((item, index) => {
-                                    return (<p key={index}>{item.name}</p>)
+                                    return (<p id={item.id} key={index}>{item.first_name} {item.last_name}</p>)
                                 })}
                             </div>
                         </div>

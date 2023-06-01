@@ -2,7 +2,6 @@ import React, {useState, useEffect, useContext} from 'react'
 import clsx from 'clsx'
 import parse from 'html-react-parser'
 
-
 // Assets
 import * as cx from './Banner.module.scss'
 import banner from '@images/topfold-banner.jpg'

@@ -13,7 +13,7 @@
 }
 
 .content {
-    @apply flex flex-col-reverse justify-between items-center gap-[1.875rem] lg:flex-row lg:gap-[8.8125rem];
+    @apply flex flex-col-reverse justify-between items-center gap-[1.875rem] md:flex-row lg:gap-[8.8125rem];
     p {
         @apply font-primary text-xsm mb-[2rem];
         strong {

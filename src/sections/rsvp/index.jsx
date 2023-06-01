@@ -27,9 +27,6 @@ import 'react-toastify/dist/ReactToastify.css';
 // Assets
 import * as cx from './RSVP.module.scss'
 
-// Data 
-import { pageInfo } from '@data'
-
 const RSVP = ({
   title,
   paragraphs,
@@ -131,10 +128,6 @@ const RSVP = ({
 
   const handleClose = () => {
     setOpen(false)
-  }
-
-  const handleEmail = () => {
-
   }
 
   return (

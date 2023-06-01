@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-
-import { pageInfo } from '@data'
 import clsx from 'clsx'
 import * as cx from './Navigation.module.scss'
 import logo from '@images/logo-sm.png'
@@ -72,7 +70,7 @@ const Navigation = ({
                             </div>
                         </div>
                         <ul className={cx.nav}>
-                            {pageInfo.menu.map((item, index) => {
+                            {menu.map((item, index) => {
                                 return ( 
                                     <li key={index} className={cx.item}>
                                         <a 

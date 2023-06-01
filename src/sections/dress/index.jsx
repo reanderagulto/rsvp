@@ -5,9 +5,6 @@ import parse from 'html-react-parser'
 // Assets
 import * as cx from './Dress.module.scss'
 
-// Data
-import { pageInfo } from '@data'
-
 const DressCode = ({
     title, 
     ladies,
