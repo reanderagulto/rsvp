@@ -15,6 +15,25 @@
     .sliders {
         @apply flex flex-col items-center justify-between gap-[33px] my-[30px] sm:flex-row;
 
+        [class~="image-gallery-slide"] {
+            [class~="image-gallery-image"] {
+                @apply w-[173px] h-[300px] object-cover object-center rounded-md;
+            }
+
+            [class~="image-gallery-description"] {
+                @apply top-[unset] bottom-[45px] font-secondary text-xxsm md:top-[70px] md:bottom-[unset];
+            }
+        }
+
+        [class~="image-gallery-bullets"] {
+            [class~="image-gallery-bullet"] {
+                @apply p-[3.7px] my-0 mx-[8px] hover:bg-primary-100;
+                &[class~="active"] {
+                    @apply bg-secondary;
+                }
+            }
+        }
+
         .boxContainer {
             @apply content-[''] rounded-md bg-white-200 w-[173px] h-[300px];
         }
@@ -35,7 +54,7 @@
         @apply flex items-center flex-col justify-between gap-[20px] mt-[50px] xxxs:flex-row xxxs:gap-0;
 
         .item {
-            @apply content-[''] w-[100px] h-[100px] bg-white-300 rounded-lg;
+            @apply content-[''] w-[90px] h-[90px] bg-white-300 rounded-lg;
 
             &.sageGreen {
                 @apply bg-color-swatch-100;

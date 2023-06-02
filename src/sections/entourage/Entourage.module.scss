@@ -54,6 +54,9 @@
             }
 
             .inner {
+                h3{ 
+                    @apply text-center;
+                }
                 &:nth-of-type(1) {
                     @apply text-center md:text-right;
                 }

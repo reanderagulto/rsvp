@@ -6,7 +6,6 @@ import * as cx from './Page.module.scss'
 
 // firebase
 import db from '@/firebase-config'
-import firebase from 'firebase/compat/app';
 
 // sections
 import Navigation from '@sections/navigation'
@@ -18,6 +17,7 @@ import DressCode from '@sections/dress'
 import RSVP from '@sections/rsvp'
 import Footer from '@sections/footer'
 import footerImg from '@images/footer.png'
+import loadingImg from '@images/logo.gif'
 
 import { pageImages } from '@data'
 
@@ -111,7 +111,7 @@ const Page = () => {
 
       setTimeout(function() {
         setLoading(false)
-      }, 1500);
+      }, 1000);
       
     }
   }, [entourageData, pageInfoData])
@@ -119,8 +119,13 @@ const Page = () => {
 
   return (
     <>
-      {loading == true && <div>loading...</div>}
-      {loading === false && <div className={cx.wrapper}>
+      {loading == true && 
+        <div className={cx.loading}>
+          <img src={loadingImg} alt='fake-loader'/>
+        </div>
+      }
+      {loading === false && 
+        <div className={cx.wrapper}>
           <Navigation 
             menu={pageInfo.menu.items}
           />
@@ -169,7 +174,8 @@ const Page = () => {
             className={cx.footerImage} 
             style={{backgroundImage: `url(${footerImg})`}} 
           />
-      </div>}
+        </div>
+      }
     </>
   )
 }

@@ -39,6 +39,8 @@ const Story = ({
                         showFullscreenButton={true}
                         showBullets={true}
                         showPlayButton={false}
+                        autoPlay={true}
+                        slideInterval={5000}
                     />
                 </div>
             </div>

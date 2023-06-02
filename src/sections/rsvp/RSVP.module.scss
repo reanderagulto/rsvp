@@ -99,3 +99,15 @@
         @apply w-full;
     }
 }
+
+
+.rsvpConfirmItemContainer {
+    @apply my-[10px];
+    .rsvpConfirmItem {
+        @apply flex flex-row items-center ml-[15px] my-[10px];
+    }
+}
+
+[class~='Toastify__toast-body'] {
+    @apply items-start;
+}
