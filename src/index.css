@@ -1,25 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @font-face {
   font-family: "Gistesy";
   src: local("Gistesy"),
-   url("./assets/fonts/Gistesy/gistesy.ttf") format("truetype");
+   url("./assets/fonts/Gistesy/gistesy.woff") format("woff");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "TANAngelton";
   src: local("TANAngelton"),
-   url("./assets/fonts/TAN/tan-angelton.ttf") format("truetype");
+   url("./assets/fonts/TAN/tan-angelton.woff") format("woff");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "OpenSauce";
   src: local("OpenSauce"),
-   url("./assets/fonts/OpenSauce/opensauce-regular.ttf") format("truetype");
+   url("./assets/fonts/OpenSauce/opensauce-regular.woff") format("woff");
   font-weight: 400;
 }
 
@@ -50,3 +46,7 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #446070; 
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
