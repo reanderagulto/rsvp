@@ -48,7 +48,7 @@ const RSVP = ({
     switch(objAlert.status){
       case 'success':
         toastId.current = toast.success(objAlert.message, {
-          position: "top-center",
+          position: "top-left",
           autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -59,7 +59,7 @@ const RSVP = ({
         break
       case 'error':
         toastId.current = toast.error(objAlert.message, {
-          position: "top-center",
+          position: "top-left",
           hideProgressBar: false,
           autoClose: 2000,
           closeOnClick: true,
@@ -70,7 +70,7 @@ const RSVP = ({
         break
       case 'warning':
         toastId.current = toast.warn(objAlert.message, {
-          position: "top-center",
+          position: "top-left",
           hideProgressBar: false,
           autoClose: 5000,
           closeOnClick: true,
