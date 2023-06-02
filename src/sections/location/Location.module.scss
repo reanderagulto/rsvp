@@ -12,7 +12,7 @@
     }
 
     .contentWrap{
-        @apply flex flex-col gap-[1.875rem] items-start justify-between lg:gap-[3.625rem] lg:flex-row;
+        @apply flex flex-col gap-[1.875rem] items-start justify-between lg:gap-[3.625rem] md:flex-row;
     }
 
     .content {

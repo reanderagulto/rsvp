@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import * as cx from './Splash.module.scss'
 import clsx from 'clsx'
 import parse from 'html-react-parser'
@@ -9,9 +9,35 @@ import footer from '@images/footer.png'
 import bigLogo from '@images/logo.png'
 
 // Data
-import { pageInfo } from '@data'
+import db from '@/firebase-config'
 
 const SplashScreen = () => {
+  const [pageInfoData, setPageInfoData] = useState([])
+  const [pageInfo, setPageInfo] = useState({})
+
+  useEffect(() => {
+    db.collection('pageInfo').onSnapshot(snapshot => {
+      setPageInfoData(
+        snapshot.docs.map(doc => (
+          {
+            id: doc.id, 
+            data: doc.data()
+          }
+        ))
+      )
+    });
+  }, [])
+
+  useEffect(() => {
+    let data = {}
+    pageInfoData.forEach(item => {
+      Object.assign(data, {
+        [item.id]: item.data
+      })
+    });
+    setPageInfo(data)
+  }, [pageInfoData])
+
   return (
     <section className={cx.main}>
       <div className={clsx(cx.header, cx.headings)} style={{backgroundImage: `url(${header})`}} />

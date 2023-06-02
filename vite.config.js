@@ -12,7 +12,8 @@ export default defineConfig({
       '@layout': "/src/layout",
       '@data': "/src/data.jsx",
       '@images': "/src/assets/images",
-      '@svg': "/src/assets/svg"
+      '@svg': "/src/assets/svg", 
+      '@hooks' : "/src/hooks"
     },
   },
 })

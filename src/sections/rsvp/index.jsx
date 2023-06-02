@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import parse from 'html-react-parser'
 import clsx from 'clsx'
 import Button from '@mui/material/Button';
@@ -12,25 +12,28 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
+
+import CheckIcon from '@mui/icons-material/Check';
+import CloseIcon from '@mui/icons-material/Close';
 
 import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
 import EmailIcon from '@mui/icons-material/Email';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Assets
 import * as cx from './RSVP.module.scss'
 
-// Data 
-import { pageInfo } from '@data'
+// firebase
+import db from '@/firebase-config'
 
-const RSVP = () => {
-
-  String.prototype.toProperCase = function () {
-    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-  };
+const RSVP = ({
+  title,
+  paragraphs,
+  guests
+}) => {
 
   const [results, setResults] = useState([])
   const [typed, setTyped] = useState(false)
@@ -38,6 +41,48 @@ const RSVP = () => {
   const [clearRadio, setClearRadio] = useState(false)
   const [open, setOpen] = useState(false)
   const [response, setResponse] = useState('')
+  const [email, setEmail] = useState('')
+  const toastId = React.useRef(null);
+
+  const showToast = (objAlert) => {
+    switch(objAlert.status){
+      case 'success':
+        toastId.current = toast.success(objAlert.message, {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,        
+        });
+        break
+      case 'error':
+        toastId.current = toast.error(objAlert.message, {
+          position: "top-center",
+          hideProgressBar: false,
+          autoClose: 2000,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,        
+        });
+        break
+      case 'warning':
+        toastId.current = toast.warn(objAlert.message, {
+          position: "top-center",
+          hideProgressBar: false,
+          autoClose: 5000,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,        
+        });
+        break
+      default: 
+        break;
+    }
+  }
 
   const handleChange = (e) => {
     let data = []
@@ -47,7 +92,7 @@ const RSVP = () => {
     }
     else {        
       let re = new RegExp('^' + e.target.value.toLowerCase())
-      data = pageInfo.guests.filter((item) => {
+      data = guests.filter((item) => {
         return item.last_name.toLowerCase().match(re) 
       })
       if(data.length > 0){
@@ -60,26 +105,75 @@ const RSVP = () => {
     setResults(data)
   }
 
-  const handleCheck = (e, name) => {
-    if(e.target.checked) {
-      setRsvp([...rsvp, name]);
-    }      
+  const handleCheck = (e, id) => {
+    if(guests.filter((guest) => { return guest.id === id })[0].rsvp_status === ''){
+      if(e.target.checked) {
+        setRsvp([...rsvp, id]);
+      }      
+      else {
+        const newItems = [...rsvp]
+        newItems.splice(newItems.indexOf(id), 1)
+        setRsvp(newItems)
+      }
+    }
     else {
-      const newItems = [...rsvp]
-      newItems.splice(newItems.indexOf(name), 1)
-      setRsvp(newItems)
+      showToast({
+        status: 'warning', 
+        message: <div className=''>
+          <p>You've already responsed!</p>
+          <p>If you wish to change your response kindly reach out: </p>          
+          <div>
+            <p><b>Reander Agulto</b></p>
+            <p>0936-696-8097</p>
+          </div>
+          <div>
+            <p><b>Julienne Anne Imperial</b></p>
+            <p>0917-821-2257</p>
+          </div>
+        </div>
+      })
     }
   }
 
-  const handleDelete = (name) => {
+  const handleDelete = (id) => {
     const newItems = [...rsvp]
-    newItems.splice(newItems.indexOf(name), 1)
+    newItems.splice(newItems.indexOf(id), 1)
     setRsvp(newItems)
   }
 
   const handleOpen = (e) => {
-    setResponse(e.target.value)
-    setOpen(true)
+    if(rsvp.length > 0) {
+      setResponse(e.target.value)
+      setOpen(true)
+    }    
+    else { 
+      showToast({
+        status: 'error',
+        message: 'Please search for your name on the textbox below'
+      })
+    }
+  }
+
+  const handleProceed = () => { 
+    rsvp.map((item) => {
+      db.collection('guestBook').doc(item).set({
+        rsvp_status: response,
+        email: email
+      }, { merge: true} )
+    })  
+    let message = ''
+    if(response === 'going') {
+      message = <div><p>We received your response.</p> <p>See you on <b>September 23!</b></p></div>
+    }
+    else if(response === 'not-going')
+      message = <div><p>We received your response.</p> <p>We'll miss you!</p></div>
+    
+    handleClose()
+    showToast({
+      status: 'success', 
+      message: message
+    })
+    setRsvp([])
   }
 
   const handleClose = () => {
@@ -89,9 +183,9 @@ const RSVP = () => {
   return (
     <section className={cx.wrapper} id="rsvp">
         <div className={clsx(cx.container, 'container')}>
-          <h2>{pageInfo.rsvp.title}</h2>
+          <h2>{title}</h2>
           <div className={cx.content}>
-            {pageInfo.rsvp.paragraphs && pageInfo.rsvp.paragraphs.map((item, index) => {
+            {paragraphs && paragraphs.map((item, index) => {
               return (
                 <p key={index}>{parse(item)}</p>
               )
@@ -114,14 +208,14 @@ const RSVP = () => {
             >
               {results.length > 0 && results.map((item, index) => {
                 return (
-                  <div key={index} id={`${item.first_name.toLowerCase()}-${item.last_name.toLowerCase()}`}>
+                  <div key={index} id={item.id}>
                     <input 
                       type="checkbox" 
                       className={cx.checkbox} 
-                      checked={rsvp.includes(`${item.first_name.toLowerCase()}-${item.last_name.toLowerCase()}`)}
+                      checked={rsvp.includes(item.id)}
                       onClick={
                         (e) => { 
-                          handleCheck(e, `${item.first_name.toLowerCase()}-${item.last_name.toLowerCase()}`)
+                          handleCheck(e, item.id)
                         }
                       }/>
                     <span>{item.first_name} {item.last_name}</span>
@@ -137,7 +231,7 @@ const RSVP = () => {
               {rsvp.length > 0 && rsvp.map((item, index) => {
                 return (
                   <div key={index} className={cx.rsvpItem}>
-                    <span>{item.split('-')[0].toProperCase()} {item.split('-')[1].toProperCase()}</span>
+                    <span>{guests.filter((guest) => { return guest.id === item })[0].first_name + ' ' + guests.filter((guest) => { return guest.id === item })[0].last_name}</span>
                     <div 
                       className={cx.delete}
                       onClick={() => handleDelete(item)}
@@ -178,24 +272,63 @@ const RSVP = () => {
           aria-describedby="alert-dialog-description"
         >
           <DialogTitle id="alert-dialog-title">
-            {"RSVP Confirmation"}
+            {"Confirmation"}
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
               {response === 'going' && 
                 <div>
-                  <p>Your response is received</p>
-                  <p>If you want to receive confirmation please enter your email</p>
-
+                  <div className={cx.dialogContent}>
+                    <div>Confirming RSVP response for: </div>
+                    <div className={cx.rsvpConfirmItemContainer}>
+                      {rsvp.length > 0 && rsvp.map((item, index) => {
+                        return (
+                          <div className={cx.rsvpConfirmItem} key={index}>
+                            <CheckIcon /> <span>{guests.filter((guest) => { return guest.id === item })[0].first_name + ' ' + guests.filter((guest) => { return guest.id === item })[0].last_name}</span>
+                          </div>
+                        )
+                      })}
+                    </div>
+                    <p>To receive an email confirmation, please enter your email.</p>
+                  </div>
+                  <div className={cx.dialogControl}>
+                    <TextField 
+                      id="outlined-basic" 
+                      label="Email" 
+                      variant="outlined" 
+                      placeholder='mail@mail.com' 
+                      onChange={(e) => {
+                        console.log(e.target.value);
+                        setEmail(e.target.value)
+                      }}
+                    />
+                  </div>
+                </div>
+              }
+              {response === 'not-going' && 
+                <div>
+                  <div className={cx.dialogContent}>
+                    <div>Confirming RSVP response for: </div>
+                    <div className={cx.rsvpConfirmItemContainer}>
+                      {rsvp.length > 0 && rsvp.map((item, index) => {
+                        return (
+                          <div className={cx.rsvpConfirmItem} key={index}>
+                            <CloseIcon /> <span>{guests.filter((guest) => { return guest.id === item })[0].first_name + ' ' + guests.filter((guest) => { return guest.id === item })[0].last_name}</span>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
                 </div>
               }
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose}>Disagree</Button>
-            <Button onClick={handleClose} autoFocus>Agree</Button>
+            <Button onClick={handleProceed} autoFocus>Proceed</Button>
+            <Button onClick={handleClose}>Close</Button>
           </DialogActions>
         </Dialog>  
+        <ToastContainer />       
     </section>
   )
 }

@@ -8,10 +8,11 @@ import './react-gallery.scss'
 import * as cx from './Story.module.scss'
 import header from '@images/header.png'
 
-// Data
-import { pageInfo } from '@data'
-
-const Story = () => {
+const Story = ({
+    title, 
+    paragraphs,
+    gallery
+}) => {
   return (
     <section className={cx.wrapper} id="story">
         <div 
@@ -21,10 +22,10 @@ const Story = () => {
             }}
         />
         <div className={clsx(cx.container, 'container')}>
-            <h2 className='text-center'>{pageInfo.story.title}</h2>
+            <h2 className='text-center'>{title}</h2>
             <div className={cx.content}>
                 <div className={clsx(cx.innner, cx.contentInner)}>
-                    {pageInfo.story.paragraphs.map((item, index) => {
+                    {paragraphs.map((item, index) => {
                         return (
                             <p key={index}>{parse(item)}</p>
                         )
@@ -32,12 +33,14 @@ const Story = () => {
                 </div>
                 <div className={clsx(cx.slider, cx.contentInner)}>
                     <ImageGallery 
-                        items={pageInfo.galleryItems} 
+                        items={gallery} 
                         infinite={true}
                         showNav={true}
                         showFullscreenButton={true}
                         showBullets={true}
                         showPlayButton={false}
+                        autoPlay={true}
+                        slideInterval={5000}
                     />
                 </div>
             </div>

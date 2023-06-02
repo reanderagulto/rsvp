@@ -5,10 +5,16 @@ import clsx from 'clsx'
 import * as cx from './Entourage.module.scss'
 import arrow from '@svg/arrow.svg'
 
-// Data
-import { pageInfo } from '@data'
-
-const Entourage = () => {
+const Entourage = ({
+    title, 
+    parentsData,
+    primaryMale,
+    primaryFemale, 
+    veil,
+    cord,
+    candle,
+    bestMaid
+}) => {
 
     const [parents, setParents] = useState(false)
     const [principal, setPrincipal] = useState(false)
@@ -18,32 +24,10 @@ const Entourage = () => {
     const handlePrincipal = () => setPrincipal(!principal)
     const handleSecondary = () => setSecondary(!secondary)
 
-    const primaryMale = pageInfo.entourage.principals.filter((item) => {
-        return item.gender == 'male'
-    })
-    
-    const primaryFemale = pageInfo.entourage.principals.filter((item) => {
-        return item.gender == 'female'
-    })
-
-    const veil = pageInfo.entourage.secondary.filter((item) => {
-        return item.role == 'veil'
-    })
-
-    const candle = pageInfo.entourage.secondary.filter((item) => {
-        return item.role == 'candle'
-    })
-
-    const cord = pageInfo.entourage.secondary.filter((item) => {
-        return item.role == 'cord'
-    })
-
-    console.log(veil, candle, cord);
-
     return (
         <section className={clsx(cx.wrapper)} id="info">
             <div className={clsx(cx.container, 'container')}>
-                <h2>{pageInfo.entourage.title}</h2>
+                <h2>{title}</h2>
                 <div className={clsx(cx.accordion, 
                     parents === true && cx.active
                 )}>
@@ -55,13 +39,13 @@ const Entourage = () => {
                         <div className={cx.innerContainer}>
                             <div className={cx.inner}>
                                 <h3><strong><em>Bride</em></strong></h3>
-                                <p>{pageInfo.entourage.parents.bride.father}</p>
-                                <p>{pageInfo.entourage.parents.bride.mother}</p>
+                                <p>{parentsData.bride.father}</p>
+                                <p>{parentsData.bride.mother}</p>
                             </div>
                             <div className={cx.inner}>
                                 <h3><strong><em>Groom</em></strong></h3>
-                                <p>{pageInfo.entourage.parents.groom.father}</p>
-                                <p>{pageInfo.entourage.parents.groom.mother}</p>
+                                <p>{parentsData.groom.father}</p>
+                                <p>{parentsData.groom.mother}</p>
                             </div>
                         </div>
                     </div>
@@ -78,8 +62,8 @@ const Entourage = () => {
                             <div className={cx.inner}>
                                 {primaryMale && primaryMale.map((item, index) => {
                                     return (
-                                    <div className={cx.principal} key={index}>
-                                        <h4>{item.position && `${item.position} `}{item.name}</h4>
+                                    <div className={cx.principal} key={index} id={item.id}>
+                                        <h4>{item.title && `${item.title}. `}{item.first_name} {item.middle_initial}. {item.last_name}</h4>
                                     </div>
                                     )
                                 })}
@@ -87,8 +71,8 @@ const Entourage = () => {
                             <div className={cx.inner}>
                                 {primaryFemale && primaryFemale.map((item, index) => {
                                     return (
-                                    <div className={cx.principal} key={index}>
-                                        <h4>{item.position && `${item.position} `}{item.name}</h4>
+                                    <div className={cx.principal} key={index} id={item.id} >
+                                        <h4>{item.title && `${item.title}. `}{item.first_name} {item.middle_initial}. {item.last_name}</h4>
                                     </div>
                                     )
                                 })}
@@ -107,30 +91,30 @@ const Entourage = () => {
                         <div className={cx.innerContainer}>
                             <div className={cx.inner}>
                                 <h3><strong><em>Best Man</em></strong></h3>
-                                <p>{pageInfo.entourage.secondary[0].name}</p>
+                                <p>{`${bestMaid[0].title}. ${bestMaid[0].first_name} ${bestMaid[0].last_name}`}</p>
                             </div>
                             <div className={cx.inner}>
                                 <h3><strong><em>Matron of Honor</em></strong></h3>
-                                <p>{pageInfo.entourage.secondary[0].name}</p>
+                                <p>{`${bestMaid[1].title}. ${bestMaid[1].first_name} ${bestMaid[1].last_name}`}</p>
                             </div>
                         </div>
                         <div className={cx.innerContainerTight}>
                             <div className={cx.innerCenter}>
                                 <h3><strong><em>Veil</em></strong></h3>
                                 {veil && veil.map((item, index) => {
-                                    return (<p key={index}>{item.name}</p>)
+                                    return (<p id={item.id} key={index}>{item.first_name} {item.last_name}</p>)
                                 })}
                             </div>
                             <div className={cx.innerCenter}>
                                 <h3><strong><em>Candle</em></strong></h3>
                                 {candle && candle.map((item, index) => {
-                                    return (<p key={index}>{item.name}</p>)
+                                    return (<p id={item.id} key={index}>{item.first_name} {item.last_name}</p>)
                                 })}
                             </div>
                             <div className={cx.innerCenter}>
                                 <h3><strong><em>Cord</em></strong></h3>
                                 {cord && cord.map((item, index) => {
-                                    return (<p key={index}>{item.name}</p>)
+                                    return (<p id={item.id} key={index}>{item.first_name} {item.last_name}</p>)
                                 })}
                             </div>
                         </div>

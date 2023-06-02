@@ -5,3 +5,7 @@
 .footerImage {
     @apply bg-cover bg-left bg-no-repeat absolute left-0 bottom-0 w-full h-[700px] -z-[1];
 }
+
+.loading {
+    @apply flex justify-center min-h-[100vh] items-center;
+}

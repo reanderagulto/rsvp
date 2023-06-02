@@ -43,10 +43,10 @@
             @apply block mt-[0.625rem];
         }
         .innerContainer {
-            @apply w-[85%] gap-[30px] m-auto px-[1.125rem] py-[1.875rem] flex flex-col items-center justify-center md:flex-row md:gap-[60px];
+            @apply w-[85%] gap-[1.875rem] m-auto px-[1.125rem] py-[1.875rem] flex flex-col items-center justify-center sm:justify-evenly md:flex-row md:gap-[3.75rem];
 
             &Tight {
-                @apply w-[85%] gap-[15px] m-auto px-[1.125rem] py-[1.875rem] flex flex-col items-center justify-center md:flex-row md:gap-[25px];
+                @apply w-[85%] gap-[0.9375rem] m-auto px-[1.125rem] pt-[0] pb-[30px] flex flex-col items-center justify-center sm:justify-evenly md:flex-row;
 
                 .innerCenter {
                     @apply text-center;
@@ -54,6 +54,9 @@
             }
 
             .inner {
+                h3{ 
+                    @apply text-center;
+                }
                 &:nth-of-type(1) {
                     @apply text-center md:text-right;
                 }
@@ -65,7 +68,7 @@
         }
 
         .principal {
-            @apply py-[10px];
+            @apply py-[0.625rem];
         }
     }
 

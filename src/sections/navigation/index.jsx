@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-
-import { pageInfo } from '@data'
 import clsx from 'clsx'
 import * as cx from './Navigation.module.scss'
 import logo from '@images/logo-sm.png'
 
-const Navigation = () => {
+const Navigation = ({
+    menu
+}) => {
 
     const [hamburger, setHamburger] = useState(false)
     const [scrolled, setScrolled] = useState(false)
@@ -41,7 +41,7 @@ const Navigation = () => {
             <nav>
                 <div className={cx.desktop}>
                     <ul className={cx.nav}>
-                        {pageInfo.menu.map((item, index) => {
+                        {menu.map((item, index) => {
                             return ( 
                                 <li key={index} className={cx.item}>
                                     <a href={item.link}>
@@ -70,7 +70,7 @@ const Navigation = () => {
                             </div>
                         </div>
                         <ul className={cx.nav}>
-                            {pageInfo.menu.map((item, index) => {
+                            {menu.map((item, index) => {
                                 return ( 
                                     <li key={index} className={cx.item}>
                                         <a 

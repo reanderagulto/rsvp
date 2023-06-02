@@ -1,5 +1,5 @@
 .wrapper {
-    @apply py-[44px];
+    @apply py-[2.75rem];
 }
 
 .container {
@@ -8,7 +8,7 @@
     }
 
     .content {
-        @apply w-full mt-[29px] text-center font-primary text-xsm md:w-[409px] m-auto;
+        @apply w-full mt-[1.8125rem] text-center font-primary text-xsm md:w-[25.5625rem] m-auto;
 
         p {
             strong {
@@ -19,11 +19,11 @@
 }
 
 .controlContainer {
-    @apply flex items-center justify-center flex-col mt-[34px] md:w-[695px];
+    @apply flex items-center justify-center flex-col mt-[2.125rem] md:w-[43.4375rem];
 
     .control {
         all: unset;
-        @apply h-[35px] min-w-full w-auto block text-[0.85rem] bg-primary-200 rounded-md border-none text-white-200 font-secondary indent-[21px] py-[12px] transition-all duration-300 ease-in-out md:text-xsm md:h-[45px];
+        @apply h-[2.1875rem] min-w-full w-auto block text-[0.85rem] bg-primary-200 rounded-md border-none text-white-200 font-secondary indent-[1.3125rem] py-[0.75rem] transition-all duration-300 ease-in-out md:text-xsm md:h-[2.8125rem];
 
         &.active{
             @apply rounded-b-none;
@@ -32,17 +32,17 @@
 }
 
 .resultsContainer {
-    @apply w-0 max-h-0 bg-primary-100 text-[0.85rem] text-white-200 font-secondary transition-max-height duration-300 ease-linear md:text-xsm px-[21px] py-[12px] opacity-0 overflow-y-scroll;
+    @apply w-0 max-h-0 bg-primary-100 text-[0.85rem] text-white-200 font-secondary transition-max-height duration-300 ease-linear md:text-xsm px-[1.3125rem] py-[0.75rem] opacity-0 overflow-y-scroll;
 
     &.active {
-        @apply w-full min-h-full max-h-[200px] h-auto opacity-100;
+        @apply w-full min-h-full max-h-[12.5rem] h-auto opacity-100;
 
         div {
-            @apply flex items-center justify-start gap-[6px] py-[8px];
+            @apply flex items-center justify-start gap-[0.375rem] py-[0.5rem];
 
             input[type="checkbox"] {
                 &.checkbox {
-                    @apply w-[20px] h-[20px] rounded-sm;
+                    @apply w-[1.25rem] h-[1.25rem] rounded-sm;
     
                 }
                 &:checked {
@@ -54,14 +54,14 @@
 }
 
 .rsvpResultsContainer {
-    @apply flex items-center flex-wrap w-0 max-h-0 bg-white-300 text-white-200 font-secondary transition-max-height duration-300 ease-linear md:text-xsm px-[21px] py-[12px] opacity-0 gap-[5px];
+    @apply flex items-center flex-wrap w-0 max-h-0 bg-white-300 text-white-200 font-secondary transition-max-height duration-300 ease-linear md:text-xsm px-[1.3125rem] py-[0.75rem] opacity-0 gap-[0.3125rem];
 
     &.active {
         @apply w-full min-h-full max-h-[100vh] h-auto opacity-100;
     }
 
     .rsvpItem {
-        @apply flex items-center text-[12px] bg-primary-200 rounded-sm p-[5px] relative gap-[10px];
+        @apply flex items-center text-[0.75rem] bg-primary-200 rounded-sm p-[0.3125rem] relative gap-[0.625rem];
 
         div { 
             @apply cursor-pointer;
@@ -71,12 +71,12 @@
 }
 
 .buttonContainer { 
-    @apply flex flex-col items-center justify-start md:justify-center gap-[5px] mt-[10px] md:gap-[20px] md:flex-row;
+    @apply flex flex-col items-center justify-start md:justify-center gap-[0.3125rem] mt-[0.625rem] md:gap-[1.25rem] md:flex-row;
 
     .btnOption {
         span {
             &[class~='MuiFormControlLabel-label'] {
-                @apply font-secondary text-primary-200 text-[15px];
+                @apply font-secondary text-primary-200 text-[0.9375rem];
             }
         }
 
@@ -86,4 +86,28 @@
             }
         } 
     }
+}
+
+.dialogContent {
+    @apply mb-[10px];
+}
+
+.dialogControl {
+    @apply w-full;
+
+    [class~='MuiTextField-root'] {
+        @apply w-full;
+    }
+}
+
+
+.rsvpConfirmItemContainer {
+    @apply my-[10px];
+    .rsvpConfirmItem {
+        @apply flex flex-row items-center ml-[15px] my-[10px];
+    }
+}
+
+[class~='Toastify__toast-body'] {
+    @apply items-start;
 }
