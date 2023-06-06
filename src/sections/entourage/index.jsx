@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import clsx from 'clsx'
+import PetsIcon from '@mui/icons-material/Pets';
 
 // Assets
 import * as cx from './Entourage.module.scss'
@@ -13,7 +14,9 @@ const Entourage = ({
     veil,
     cord,
     candle,
-    bestMaid
+    bestMaid,
+    soloSponsors,
+    doggos,
 }) => {
 
     const [parents, setParents] = useState(false)
@@ -28,6 +31,7 @@ const Entourage = ({
         <section className={clsx(cx.wrapper)} id="info">
             <div className={clsx(cx.container, 'container')}>
                 <h2>{title}</h2>
+                {/* Parents */}
                 <div className={clsx(cx.accordion, 
                     parents === true && cx.active
                 )}>
@@ -50,6 +54,7 @@ const Entourage = ({
                         </div>
                     </div>
                 </div>
+                {/* Primary Sponsors */}
                 <div className={clsx(cx.accordion, 
                     principal === true && cx.active
                 )}>
@@ -80,6 +85,7 @@ const Entourage = ({
                         </div>
                     </div>
                 </div>
+                {/* Secondary Sponsors */}
                 <div className={clsx(cx.accordion, 
                     secondary === true && cx.active
                 )}>
@@ -114,6 +120,34 @@ const Entourage = ({
                             <div className={cx.innerCenter}>
                                 <h3><strong><em>Cord</em></strong></h3>
                                 {cord && cord.map((item, index) => {
+                                    return (<p id={item.id} key={index}>{item.first_name} {item.last_name}</p>)
+                                })}
+                            </div>
+                        </div>
+                        <div className={cx.innerContainerTight}>
+                            <div className={cx.innerCenter}>
+                                <h3><strong><em>Ring Bearer</em></strong></h3>
+                                {soloSponsors.ringBearer && soloSponsors.ringBearer.map((item, index) => {
+                                    return (<p id={item.id} key={index}>{item.first_name} {item.last_name}</p>)
+                                })}
+                            </div>
+                            <div className={cx.innerCenter}>
+                                <h3><strong><em>Coin Bearer</em></strong></h3>
+                                {soloSponsors.coinBearer && soloSponsors.coinBearer.map((item, index) => {
+                                    return (<p id={item.id} key={index}>{item.first_name} {item.last_name}</p>)
+                                })}
+                            </div>
+                            <div className={cx.innerCenter}>
+                                <h3><strong><em>Bible Bearer</em></strong></h3>
+                                {soloSponsors.bibleBearer && soloSponsors.bibleBearer.map((item, index) => {
+                                    return (<p id={item.id} key={index}>{item.first_name} {item.last_name}</p>)
+                                })}
+                            </div>
+                        </div>
+                        <div className={cx.innerContainerTight}>
+                            <div className={cx.innerCenter}>
+                                <h3><strong><em>Bridesmaid</em></strong></h3>
+                                {soloSponsors.bridesMaid && soloSponsors.bridesMaid.map((item, index) => {
                                     return (<p id={item.id} key={index}>{item.first_name} {item.last_name}</p>)
                                 })}
                             </div>

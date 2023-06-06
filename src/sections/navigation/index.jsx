@@ -21,6 +21,14 @@ const Navigation = ({
             setScrolled(false)
     }
 
+    const navigateSection = (id, type) => {
+        const element = document.querySelector(id)
+        if(type === "mobile")
+            handleHamburger()
+        element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })
+    }
+    
+
     useEffect(() => {
         changeBackground()
         window.addEventListener('scroll', changeBackground)
@@ -43,10 +51,12 @@ const Navigation = ({
                     <ul className={cx.nav}>
                         {menu.map((item, index) => {
                             return ( 
-                                <li key={index} className={cx.item}>
-                                    <a href={item.link}>
-                                        {item.title}
-                                    </a>
+                                <li 
+                                    key={index} 
+                                    className={cx.item}
+                                    onClick={() => navigateSection(item.link, 'desktop')}
+                                >
+                                    {item.title}                                    
                                 </li>
                             )
                         })}
@@ -72,7 +82,11 @@ const Navigation = ({
                         <ul className={cx.nav}>
                             {menu.map((item, index) => {
                                 return ( 
-                                    <li key={index} className={cx.item}>
+                                    <li 
+                                        key={index} 
+                                        className={cx.item}
+                                        onClick={() => navigateSection(item.link, 'mobile')}
+                                    >
                                         <a 
                                             href={item.link}
                                             onClick={handleHamburger}

@@ -20,6 +20,10 @@
 
         .paragraphs {
             @apply mb-[2.0625rem];
+
+            p {
+                @apply mb-[2rem] font-primary text-xsm leading-[2rem];
+            }
         }
     }
 
