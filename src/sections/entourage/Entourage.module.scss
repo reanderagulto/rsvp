@@ -20,7 +20,7 @@
         }
 
         .content {
-            @apply max-h-[fit-content] overflow-y-scroll md:overflow-visible;
+            @apply max-h-[100vh] overflow-y-scroll md:overflow-visible;
         }
     }
 

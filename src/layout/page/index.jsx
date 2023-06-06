@@ -32,6 +32,7 @@ const Page = () => {
   const [veil, setVeil] = useState([])
   const [candle, setCandle] = useState([])
   const [cord, setCord] = useState([])
+  const [soloSponsors, setSoloSponsors] = useState({})
   const [bestMaid, setBestMaid] = useState([])
   
   const [loading, setLoading] = useState(true)
@@ -97,6 +98,22 @@ const Page = () => {
           return item.role == 'Cord' 
       }))
 
+      setSoloSponsors({
+        ringBearer: entourageData.filter((item) => {
+          return item.role == 'Ring Bearer'
+        }), 
+        coinBearer: entourageData.filter((item) => {
+          return item.role == 'Coin Bearer'
+        }), 
+        bibleBearer: entourageData.filter((item) => {
+          return item.role == 'Bible Bearer'
+        }), 
+        bridesMaid: entourageData.filter((item) => {
+          return item.role == 'Bridesmaid'
+        }), 
+        
+      })
+
       setBestMaid(entourageData.filter((item) => {
         return item.role == 'Best Man' || item.role == 'Matron of Maids'
       }))
@@ -151,6 +168,11 @@ const Page = () => {
                 cord={cord}
                 candle={candle}
                 bestMaid={bestMaid}
+                soloSponsors={soloSponsors}
+                doggos={[
+                  'Mr. Chabi Imperial',
+                  'Mr. Dylan Baby Luke Imperial'
+                ]}
               />
               <Location 
                 title={pageInfo.location.title}
