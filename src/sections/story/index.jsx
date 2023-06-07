@@ -8,6 +8,14 @@ import './react-gallery.scss'
 import * as cx from './Story.module.scss'
 import header from '@images/header.png'
 
+// Timeline
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
+
 const Story = ({
     title, 
     paragraphs,
@@ -44,6 +52,41 @@ const Story = ({
                     />
                 </div>
             </div>
+        </div>
+        <div className={clsx(cx.container, 'container')}>
+            <Timeline position="alternate">
+                <TimelineItem>
+                    <TimelineSeparator>
+                    <TimelineDot />
+                        <TimelineConnector />
+                    </TimelineSeparator>
+                    <TimelineContent className={cx.timelineContent}>
+                        <div className={cx.timelineHeader}>
+
+                        </div>
+                    </TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                    <TimelineSeparator>
+                    <TimelineDot />
+                    <TimelineConnector />
+                    </TimelineSeparator>
+                    <TimelineContent>Code</TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                    <TimelineSeparator>
+                    <TimelineDot />
+                    <TimelineConnector />
+                    </TimelineSeparator>
+                    <TimelineContent>Sleep</TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                    <TimelineSeparator>
+                    <TimelineDot />
+                    </TimelineSeparator>
+                    <TimelineContent>Repeat</TimelineContent>
+                </TimelineItem>
+            </Timeline>
         </div>
     </section>
   )
