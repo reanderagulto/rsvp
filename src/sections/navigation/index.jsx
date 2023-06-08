@@ -25,7 +25,7 @@ const Navigation = ({
         const element = document.querySelector(id)
         if(type === "mobile")
             handleHamburger()
-        element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })
+        element.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" })
     }
     
 
