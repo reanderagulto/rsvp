@@ -17,7 +17,7 @@ import DressCode from '@sections/dress'
 import RSVP from '@sections/rsvp'
 import Footer from '@sections/footer'
 import footerImg from '@images/footer.png'
-import loadingImg from '@images/logo.gif'
+import Loading from '@components/loading'
 
 import { pageImages } from '@data'
 
@@ -137,9 +137,7 @@ const Page = () => {
   return (
     <>
       {loading == true && 
-        <div className={cx.loading}>
-          <img src={loadingImg} alt='fake-loader'/>
-        </div>
+        <Loading />
       }
       {loading === false && 
         <div className={cx.wrapper}>

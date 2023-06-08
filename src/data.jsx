@@ -160,3 +160,18 @@ export const pageImages = {
         }
     ]
 }
+
+export const ourStory = {
+    story: {
+        friendship: 
+        {
+            p: [
+                'Everything started online!!???',
+                'A very unfortunate thing happened last 2020, but somehow, it lead us to be introduced to each other on June 2020!', 
+                'Reander was serving in CCF ministry in Cavite, while Jeni was serving in CCF Main\'s B1G music ministry in Pasig. But event with that distance, people from different places of the world started serving together by collaborating online due to the pandemic.'
+            ], 
+            
+        }, 
+        
+    }
+}

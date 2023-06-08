@@ -28,6 +28,7 @@ export default defineConfig({
       '@assets': "/src/assets",
       '@sections': "/src/sections",
       '@layout': "/src/layout",
+      '@components': "/src/components",
       '@data': "/src/data.jsx",
       '@images': "/src/assets/images",
       '@svg': "/src/assets/svg", 
