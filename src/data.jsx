@@ -18,12 +18,27 @@ import powderBlueMen from '@images/dress/powder-blue-men.jpg'
 import sageGreenLadies from '@images/dress/sage-green-ladies.jpg'
 import sageGreenMen from '@images/dress/sage-green-men.jpg'
 
-import ourStoryPandemic from '@images/our-story/our-story-pandemic.png'
-import ourStoryMoves from '@images/our-story/our-story-damoves.png'
-import ourStoryOfficial from '@images/our-story/our-story-official.png'
-import ourStoryChallenge from '@images/our-story/our-story-challenges.png'
-import ourStoryProposal from '@images/our-story/our-story-proposal.png'
-import ourStoryBeyond from '@images/our-story/our-story-beyond.png'
+// Primary Sponsors
+import female1 from '@images/dress/female-primary-sponsors-blue-1.jpg'
+import female2 from '@images/dress/female-primary-sponsors-blue-2.jpg'
+import female3 from '@images/dress/female-primary-sponsors-blue-3.jpg'
+import male1 from '@images/dress/male-primary-sponsor-blue-1.jpg'
+import male2 from '@images/dress/male-primary-sponsor-blue-2.jpg'
+import male3 from '@images/dress/male-primary-sponsor-blue-3.jpg'
+
+// Secondary 
+import secMale1 from '@images/dress/male-secondary-sponsor-1.jpg'
+import secMale2 from '@images/dress/male-secondary-sponsor-2.jpg'
+import secMale3 from '@images/dress/male-secondary-sponsor-3.jpg'
+import secFemale1 from '@images/dress/female-secondary-sponsor-1.jpg'
+import secFemale2 from '@images/dress/female-secondary-sponsor-2.jpg'
+
+import ourStoryPandemic from '@images/our-story/our-story-pandemic.svg'
+import ourStoryMoves from '@images/our-story/our-story-damoves.svg'
+import ourStoryOfficial from '@images/our-story/our-story-official.svg'
+import ourStoryChallenge from '@images/our-story/our-story-challenges.svg'
+import ourStoryProposal from '@images/our-story/our-story-proposal.svg'
+import ourStoryBeyond from '@images/our-story/our-story-beyond.svg'
 
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
@@ -123,7 +138,7 @@ export const pageImages = {
             originalWidth: "173px"
         }, 
         {
-            description: 'Powder Blue', 
+            description: 'Dusty Blue', 
             original: powderBlueMen,
             loading: 'lazy',
             sizes: "173px 300px",
@@ -149,7 +164,7 @@ export const pageImages = {
     ],
     ladiesDress: [
         {
-            description: 'Powder Blue', 
+            description: 'Dusty Blue', 
             original: powderBlueLadies,
             loading: 'lazy',
             sizes: "173px 300px",
@@ -172,7 +187,96 @@ export const pageImages = {
             originalHeight: "300px",
             originalWidth: "173px"
         }
-    ]
+    ],
+    primarySponsors: {
+        female: [
+            {
+                original: female1,
+                loading: 'lazy',
+                sizes: "173px 300px",
+                originalHeight: "300px",
+                originalWidth: "173px"
+            },
+            {
+                original: female2,
+                loading: 'lazy',
+                sizes: "173px 300px",
+                originalHeight: "300px",
+                originalWidth: "173px"
+            },
+            {
+                original: female3,
+                loading: 'lazy',
+                sizes: "173px 300px",
+                originalHeight: "300px",
+                originalWidth: "173px"
+            },
+        ],
+        male: [
+            {
+                original: male1,
+                loading: 'lazy',
+                sizes: "173px 300px",
+                originalHeight: "300px",
+                originalWidth: "173px"
+            },
+            {
+                original: male2,
+                loading: 'lazy',
+                sizes: "173px 300px",
+                originalHeight: "300px",
+                originalWidth: "173px"
+            },
+            {
+                original: male3,
+                loading: 'lazy',
+                sizes: "173px 300px",
+                originalHeight: "300px",
+                originalWidth: "173px"
+            },
+        ]
+    },
+    secondarySponsors: {
+        female: [
+            {
+                original: secFemale1,
+                loading: 'lazy',
+                sizes: "173px 300px",
+                originalHeight: "300px",
+                originalWidth: "173px"
+            },
+            {
+                original: secFemale2,
+                loading: 'lazy',
+                sizes: "173px 300px",
+                originalHeight: "300px",
+                originalWidth: "173px"
+            },
+        ],
+        male: [
+            {
+                original: secMale1,
+                loading: 'lazy',
+                sizes: "173px 300px",
+                originalHeight: "300px",
+                originalWidth: "173px"
+            },
+            {
+                original: secMale2,
+                loading: 'lazy',
+                sizes: "173px 300px",
+                originalHeight: "300px",
+                originalWidth: "173px"
+            },
+            {
+                original: secMale3,
+                loading: 'lazy',
+                sizes: "173px 300px",
+                originalHeight: "300px",
+                originalWidth: "173px"
+            },
+        ]
+    }
 }
 
 export const ourStory = {
@@ -201,9 +305,8 @@ export const ourStory = {
         {
             title: 'January 23, 2022 - <br />Making it official',
             p: [
-                'When 2023 came, naging okay yung pasok nito samin until nagkaroon ng sakit si Reander nung birthday ni Jeni na naging reason bakit di nakapunta si Reander sa quezon to celebrate Jeni\'s birthday.',
-                'Nung gumaling si Reander sa sakit niya, he went to Jeni\'s house in Quezon nung January 23, 2022. Little did Reander na yun yung time na gagawin ng official ni Jeni yung relationship nila.', 
-                'We\'re both happy that God\'s timing is perfect. He\'s never early and late, just the right time.',
+                'After another covid surge and weeks of not seeing each other, Reander visited Jeni nung January 23, 2022 sa Tayabas, Quezon. They were cooking tteokbokki at home and Jeni made their relationship official over a pot of boiling glutinous rice.',
+                'We\'re both happy that God\'s timing is perfect. Never early, never late. ❤️', 
             ], 
             image: ourStoryOfficial,
             icon: <CheckCircleIcon />
@@ -222,9 +325,9 @@ export const ourStory = {
         {
             title: '2023 - the proposal',
             p: [
-                'Fast forward to 2023. Dala pa din namin yung baggage of tragedies that happened last year.',
-                'But inspite of all the tragedies/challenges di nawala yung impression ni Lord kay Reander to propose to Jeni.', 
-                'God made Reander realise that each moment that we have show God\'s love to us that\'s why even sa very low moment ni Jeni, reander propose to her to show God\'s love even in the darkest of times and even we are down.',
+                'We didn’t notice 2022 pass. It was a heavy year for both of us and our celebrations of the new year was too different than what we expected.',
+                'Despite all the challenges and loss we experienced, di nawala yung impression ni Lord kay Reander to propose to Jeni.', 
+                'God made Reander realize that each moment that we have show God\'s love to us that\'s why even sa very low moment ni Jeni, reander propose to her to show God\'s love even in the darkest of times and even we are down.',
             ], 
             image: ourStoryProposal,
             icon: <DiamondIcon />

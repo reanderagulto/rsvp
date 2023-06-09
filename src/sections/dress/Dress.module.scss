@@ -4,11 +4,11 @@
 
 .container {    
     h2 {
-        @apply font-heading text-xl drop-shadow-xl text-center text-white-200;
+        @apply font-heading text-xl drop-shadow-xl text-center text-white-200 my-[2rem];
     }
 
     .content {
-        @apply mt-[35px] flex-col flex items-center justify-evenly md:flex-row;
+        @apply mt-[10px] flex-col flex items-center justify-evenly md:flex-row;
 
     }
 
@@ -47,6 +47,12 @@
             span {
                 @apply block font-secondary my-[15px];
             }
+        }
+    }
+
+    .contentContainer {
+        h3 {
+            @apply font-secondary text-md drop-shadow-xl text-center text-white-200 mt-[1.5rem];
         }
     }
 

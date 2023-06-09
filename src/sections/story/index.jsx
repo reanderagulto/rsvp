@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import parse from 'html-react-parser'
 import clsx from 'clsx'
 import ImageGallery from 'react-image-gallery';
@@ -56,21 +56,23 @@ const Story = ({
                 </div>
             </div> */}
             <div className={clsx(cx.container, 'container')}>
-                <h2 className='text-center'>{title}</h2>
-                <Timeline position="alternate" className={cx.timelineContainer}>
+                <h2 className='text-center' data-aos="fade-up">{title}</h2>
+                <Timeline position={screen.width > 768 ? "alternate": "right"} className={cx.timelineContainer}>
                     {ourStory.story.map((item, index) => {
                         return (
-                            <TimelineItem className={cx.timelineItem} key={index}>
-                                <TimelineOppositeContent className={cx.timelineImage}>
+                            <TimelineItem className={clsx(cx.timelineItem, screen.width < 768 && cx.mobilTimeline )} key={index}>
+                                <TimelineOppositeContent className={cx.timelineImage} data-aos="zoom-in">
                                     <img src={item.image} alt={item.title} />
                                 </TimelineOppositeContent>
-                                <TimelineSeparator>
-                                    <TimelineDot>
-                                        {item.icon}
-                                    </TimelineDot>
-                                    <TimelineConnector />
-                                </TimelineSeparator>
-                                <TimelineContent className={cx.timelineContent}>
+                                {screen.width > 768 && 
+                                    <TimelineSeparator>
+                                        <TimelineDot>
+                                            {item.icon}
+                                        </TimelineDot>
+                                        <TimelineConnector />
+                                    </TimelineSeparator>
+                                }
+                                <TimelineContent className={cx.timelineContent} data-aos="zoom-in">
                                     <h3>{parse(item.title)}</h3>
                                     {item.p.map((pTags, pIndex) => {
                                         return (<p key={pIndex}>{parse(pTags)}</p>)

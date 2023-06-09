@@ -48,17 +48,22 @@
 
 .timelineContainer {
     .timelineItem {
+        &.mobilTimeline{
+            @apply flex-col-reverse md:flex-row-reverse;
+        }
         .timelineImage {
+            @apply self-center py-[60px];
             img {
-                @apply w-full h-auto object-cover object-center;
+                @apply w-full object-cover object-center md:w-full md:h-auto ;
             }
         }
         .timelineContent {
+            @apply self-center py-[60px];
             h3 {
-                @apply text-[25px] font-secondary text-secondary uppercase mb-[20px];
+                @apply text-center text-[25px] font-secondary text-secondary uppercase mb-[20px];
             }
             p {
-                @apply text-[14px] font-secondary my-[10px];
+                @apply text-center text-[14px] font-primary my-[10px];
             }
         }
     }

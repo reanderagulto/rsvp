@@ -30,7 +30,8 @@ const Entourage = ({
     return (
         <section className={clsx(cx.wrapper)} id="info">
             <div className={clsx(cx.container, 'container')}>
-                <h2>{title}</h2>
+                <h2 data-aos="fade-up">{title}</h2>
+                <div data-aos="fade-up">
                 {/* Parents */}
                 <div className={clsx(cx.accordion, 
                     parents === true && cx.active
@@ -153,6 +154,7 @@ const Entourage = ({
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </section>
