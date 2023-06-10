@@ -136,9 +136,11 @@ const Page = () => {
       }, 1000);
       
     }
-    AOS.init({startEvent: 'load'})
-    AOS.refresh()
   }, [entourageData, pageInfoData])
+
+  useEffect(() => {
+    AOS.init()
+  }, [])
 
 
   return (

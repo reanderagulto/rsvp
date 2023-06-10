@@ -1,7 +1,9 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import clsx from 'clsx'
 import parse from 'html-react-parser'
 import ImageGallery from 'react-image-gallery';
+
+import AOS from 'aos'
 
 // Assets
 import * as cx from './Dress.module.scss'
@@ -13,6 +15,11 @@ const DressCode = ({
     ladies,
     men
 }) => {
+
+    useEffect(() => {
+        AOS.refresh()
+    }, [])
+
     const settings = {
         dots: true,
         infinite: true,

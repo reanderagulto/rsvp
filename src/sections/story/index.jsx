@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import parse from 'html-react-parser'
 import clsx from 'clsx'
-import ImageGallery from 'react-image-gallery';
 
 // Assets
 import './react-gallery.scss'
@@ -19,11 +18,18 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 
+import AOS from 'aos'
+
 const Story = ({
     title, 
     paragraphs,
     gallery
 }) => {
+
+    useEffect(() => {
+        AOS.refresh()
+    }, [])
+
     return (
         <section className={cx.wrapper} id="story">
             <div 
@@ -32,48 +38,25 @@ const Story = ({
                     backgroundImage: `url(${header})`
                 }}
             />
-            {/* <div className={clsx(cx.container, 'container')}>
-                <div className={cx.content}>
-                    <div className={clsx(cx.innner, cx.contentInner)}>
-                        {paragraphs.map((item, index) => {
-                            return (
-                                <p key={index}>{parse(item)}</p>
-                            )
-                        })}
-                    </div>
-                    <div className={clsx(cx.slider, cx.contentInner)}>
-                        <ImageGallery 
-                            items={gallery} 
-                            infinite={true}
-                            showNav={true}
-                            showFullscreenButton={true}
-                            showBullets={true}
-                            showPlayButton={false}
-                            autoPlay={true}
-                            slideInterval={5000}
-                        />
-                    </div>
-                </div>
-            </div> */}
             <div className={clsx(cx.container, 'container')}>
                 <h2 className='text-center' data-aos="fade-up">{title}</h2>
                 <Timeline position={screen.width > 768 ? "alternate": "right"} className={cx.timelineContainer}>
                     {ourStory.story.map((item, index) => {
                         return (
-                            <TimelineItem className={clsx(cx.timelineItem, screen.width < 768 && cx.mobilTimeline )} key={index}>
-                                <TimelineOppositeContent className={cx.timelineImage} data-aos="zoom-in">
+                            <TimelineItem className={clsx(cx.timelineItem, screen.width < 768 && cx.mobilTimeline )} key={index} data-aos="fade-up" data-aos-duration="1050" data-aos-easing="linear">
+                                <TimelineOppositeContent className={cx.timelineImage}>
                                     <img src={item.image} alt={item.title} />
                                 </TimelineOppositeContent>
                                 {screen.width > 768 && 
                                     <TimelineSeparator>
-                                        <TimelineDot>
+                                        <TimelineDot className={cx.timelineDot}>
                                             {item.icon}
                                         </TimelineDot>
                                         <TimelineConnector />
                                     </TimelineSeparator>
                                 }
-                                <TimelineContent className={cx.timelineContent} data-aos="zoom-in">
-                                    <h3>{parse(item.title)}</h3>
+                                <TimelineContent className={cx.timelineContent}>
+                                    <h3>{parse(item.title)}</h3> 
                                     {item.p.map((pTags, pIndex) => {
                                         return (<p key={pIndex}>{parse(pTags)}</p>)
                                     })}

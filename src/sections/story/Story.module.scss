@@ -48,6 +48,7 @@
 
 .timelineContainer {
     .timelineItem {
+        @apply snap-start;
         &.mobilTimeline{
             @apply flex-col-reverse md:flex-row-reverse;
         }
@@ -58,13 +59,17 @@
             }
         }
         .timelineContent {
-            @apply self-center py-[60px];
+            @apply self-center py-[100px];
             h3 {
                 @apply text-center text-[25px] font-secondary text-secondary uppercase mb-[20px];
             }
             p {
                 @apply text-center text-[14px] font-primary my-[10px];
             }
+        }
+
+        .timelineDot{
+            @apply my-0;
         }
     }
 }

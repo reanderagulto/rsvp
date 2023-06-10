@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react'
 import clsx from 'clsx'
 import parse from 'html-react-parser'
+import AOS from 'aos'
 
 // Assets
 import * as cx from './Banner.module.scss'
@@ -15,6 +16,10 @@ const Banner = ({
     time, 
     location
 }) => {    
+    useEffect(() => {
+        AOS.refresh()
+    }, [])
+    
     return (
         <section className={cx.wrapper}>
             <div
