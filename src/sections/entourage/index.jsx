@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import clsx from 'clsx'
 import PetsIcon from '@mui/icons-material/Pets';
 
+import AOS from 'aos'
+
 // Assets
 import * as cx from './Entourage.module.scss'
 import arrow from '@svg/arrow.svg'
@@ -27,10 +29,15 @@ const Entourage = ({
     const handlePrincipal = () => setPrincipal(!principal)
     const handleSecondary = () => setSecondary(!secondary)
 
+    useEffect(() => {
+        AOS.refresh()
+    }, [])
+
     return (
         <section className={clsx(cx.wrapper)} id="info">
             <div className={clsx(cx.container, 'container')}>
-                <h2>{title}</h2>
+                <h2 data-aos="fade-up">{title}</h2>
+                <div data-aos="fade-up">
                 {/* Parents */}
                 <div className={clsx(cx.accordion, 
                     parents === true && cx.active
@@ -152,7 +159,16 @@ const Entourage = ({
                                 })}
                             </div>
                         </div>
+                        <div className={cx.innerContainerTight}>
+                            <div className={cx.innerCenter}>
+                                <h3><strong><em>Flower Dogs</em></strong></h3>
+                                {doggos && doggos.map((item, index) => {
+                                    return (<p id={item.id} key={index} className={cx.pets}>{item} <PetsIcon className={cx.paw} /> </p>)
+                                })}
+                            </div>
+                        </div>
                     </div>
+                </div>
                 </div>
             </div>
         </section>

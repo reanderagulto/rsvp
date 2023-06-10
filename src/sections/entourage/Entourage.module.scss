@@ -1,5 +1,5 @@
 .wrapper {
-    @apply pb-[2.625rem] pt-[2.625rem] lg:pb-[7.6875rem] bg-primary-200;
+    @apply pb-[4.625rem] pt-[4.625rem] lg:pb-[7.6875rem] bg-primary-200;
 }
 .container {
     h2 {
@@ -79,4 +79,12 @@
         }
     }
 
+}
+
+.pets {
+    @apply flex gap-[5px] justify-center; 
+
+    .paw {
+        @apply rotate-[25deg] w-[15px] h-[15px];
+    }
 }

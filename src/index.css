@@ -36,6 +36,10 @@ body {
   @apply m-0 min-h-[100vh];
 }
 
+#root {
+  overflow: hidden;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 12px;

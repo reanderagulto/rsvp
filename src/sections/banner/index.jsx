@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react'
 import clsx from 'clsx'
 import parse from 'html-react-parser'
+import AOS from 'aos'
 
 // Assets
 import * as cx from './Banner.module.scss'
@@ -15,6 +16,10 @@ const Banner = ({
     time, 
     location
 }) => {    
+    useEffect(() => {
+        AOS.refresh()
+    }, [])
+    
     return (
         <section className={cx.wrapper}>
             <div
@@ -26,13 +31,13 @@ const Banner = ({
                 <div className={clsx(cx.container, 'container')}>
                     <div className={cx.content}>
                         <div className={cx.heading}>
-                            <h1>{title}</h1>
-                            <h2>{subtitle}</h2>
+                            <h1 data-aos="fade-up" data-aos-duration="900">{title}</h1>
+                            <h2 data-aos="fade-up" data-aos-duration="900">{subtitle}</h2>
                         </div>
                         <div className={cx.inner}>
-                            <p>{date}<span>{time}</span>
+                            <p data-aos="fade-up" data-aos-duration="900">{date}<span>{time}</span>
                             </p>
-                            <p>{parse(location)}</p>
+                            <p data-aos="fade-up" data-aos-duration="900">{parse(location)}</p>
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,6 @@ import SplashScreen from '@layout/splash'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <Page /> */}
-    <SplashScreen />
+    <Page />
   </React.StrictMode>,
 )

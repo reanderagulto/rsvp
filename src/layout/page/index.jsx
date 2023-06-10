@@ -21,6 +21,9 @@ import Loading from '@components/loading'
 
 import { pageImages } from '@data'
 
+import AOS from 'aos'
+import "aos/dist/aos.css";
+
 const Page = () => {
 
   const [guestData, setGuestData] = useState([])
@@ -38,6 +41,8 @@ const Page = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    
+
     db.collection('guestBook').orderBy('last_name', 'desc').onSnapshot(snapshot => {
       setGuestData(
         snapshot.docs.map(doc => (
@@ -132,6 +137,10 @@ const Page = () => {
       
     }
   }, [entourageData, pageInfoData])
+
+  useEffect(() => {
+    AOS.init()
+  }, [])
 
 
   return (

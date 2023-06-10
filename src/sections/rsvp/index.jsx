@@ -23,6 +23,8 @@ import EmailIcon from '@mui/icons-material/Email';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import AOS from 'aos'
+
 // Assets
 import * as cx from './RSVP.module.scss'
 
@@ -180,18 +182,22 @@ const RSVP = ({
     setOpen(false)
   }
 
+  useEffect(() => {
+    AOS.refresh()
+  }, [])
+
   return (
     <section className={cx.wrapper} id="rsvp">
         <div className={clsx(cx.container, 'container')}>
-          <h2>{title}</h2>
-          <div className={cx.content}>
+          <h2 data-aos="fade-up">{title}</h2>
+          <div className={cx.content} data-aos="fade-up">
             {paragraphs && paragraphs.map((item, index) => {
               return (
                 <p key={index}>{parse(item)}</p>
               )
             })}
           </div>
-          <div className={clsx(cx.controlContainer, 'container')}>
+          <div className={clsx(cx.controlContainer, 'container')} data-aos="fade-up">
             <input 
               type="text"
               name="rsvp-search"
