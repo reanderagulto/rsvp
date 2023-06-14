@@ -286,7 +286,7 @@ export const ourStory = {
             p: [
                 'Everything started online!!???',
                 'A very unfortunate thing happened last 2020, but somehow, it lead us to be introduced to each other on June 2020!', 
-                'Reander was serving in CCF ministry in Cavite, while Jeni was serving in CCF Main\'s B1G music ministry in Pasig. But event with that distance, people from different places of the world started serving together by collaborating online due to the pandemic.'
+                'Reander was serving in CCF Salawag\'s Music Ministry in Cavite, while Jeni was serving in CCF Main\'s B1G music ministry in Pasig. But even with that distance, people from different places of the world started serving together by collaborating online due to the pandemic.'
             ], 
             image: ourStoryPandemic,
             icon: <PeopleAltIcon />
@@ -296,8 +296,8 @@ export const ourStory = {
             p: [
                 'If there were 2 things that we never ran out of, it would be topics to talk about and memes!!',
                 'This was the year that we got to know more about each other on a personal level. We chatted more about our lives, interests, opinions, and spent time bonding over games with our friends. We found ourselves finding interest in each other through our similarities and differences.', 
-                'Without reavealing our feelings to each other,   we found ourselves praying for each other and for our hearts to be prepared for what God has in store for us.',
-                'When things got more settled in  different aspects of our lives, Reander decided na umamin na at mag-pursue! He laid down his intentions before 2021 ended, and visited Jeni\'s parents in Quezon!'
+                'Without revealing our feelings for each other,   we found ourselves praying for each other and for our hearts to be prepared for what God has in store for us.',
+                'When things got more settled in  different aspects of our lives, Reander decided na umamin na at mag-pursue! He laid down his intentions before 2021 ended, and visited Jeni\'s parents in Quezon.'
             ], 
             image: ourStoryMoves,
             icon: <DirectionsRunIcon />
