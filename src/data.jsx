@@ -325,9 +325,8 @@ export const ourStory = {
         {
             title: '2023 - the proposal',
             p: [
-                'We didn’t notice 2022 pass. It was a heavy year for both of us and our celebrations of the new year was too different than what we expected.',
-                'Despite all the challenges and loss we experienced, di nawala yung impression ni Lord kay Reander to propose to Jeni.', 
-                'God made Reander realize that each moment that we have show God\'s love to us that\'s why even sa very low moment ni Jeni, reander propose to her to show God\'s love even in the darkest of times and even we are down.',
+                'We didn’t notice 2022 pass. It was a heavy year for both of us and our celebrations of the new year was far too different than what we expected.',
+                'Despite all the challenges and loss we experienced, di nawala yung impression ni Lord kay Reander to propose to Jeni... So even during a very low moment for Jeni, Reander still proposed to her.', 
             ], 
             image: ourStoryProposal,
             icon: <DiamondIcon />
