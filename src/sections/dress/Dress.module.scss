@@ -13,7 +13,7 @@
     }
 
     .sliders {
-        @apply flex flex-col items-center justify-between gap-[33px] my-[30px] sm:flex-row;
+        @apply flex flex-row items-center justify-between gap-[33px] my-[30px];
 
         [class~="image-gallery-slide"] {
             [class~="image-gallery-image"] {

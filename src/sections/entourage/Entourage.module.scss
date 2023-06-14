@@ -1,9 +1,9 @@
 .wrapper {
-    @apply pb-[4.625rem] pt-[4.625rem] lg:pb-[7.6875rem] bg-primary-200;
+    @apply pb-[4.625rem] pt-[4.625rem] md:pt-[4.625rem] lg:pb-[7.6875rem] bg-primary-200;
 }
 .container {
     h2 {
-        @apply font-heading text-xl text-white-200 drop-shadow-2xl text-center my-[5.1875rem]; 
+        @apply font-heading text-[60px] md:text-xl text-white-200 drop-shadow-2xl text-center my-[2.1875rem] md:my-[5.1875rem]; 
     }
 }
 

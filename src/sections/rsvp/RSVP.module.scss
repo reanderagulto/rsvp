@@ -8,12 +8,16 @@
     }
 
     .content {
-        @apply w-full mt-[1.8125rem] text-center font-primary text-xsm md:w-[25.5625rem] m-auto;
+        @apply w-full mt-[1.8125rem] text-center font-primary text-xsm md:w-[35.5625rem] m-auto;
 
         p {
             strong {
                 @apply block;
             }
+        }
+
+        &Alert {
+            @apply w-full mt-[1.8125rem] text-center text-[0.7rem] font-secondary m-auto;
         }
     }
 }

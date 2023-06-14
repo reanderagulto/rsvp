@@ -269,6 +269,9 @@ const RSVP = ({
                 className={cx.btnOption}
               />
             </RadioGroup>
+            <div className={clsx('text-center', cx.contentAlert, 'w-full')} data-aos="fade-up">
+              <p>Can't find your name? Please RSVP by text or chat to Reander or Jeni.</p>
+            </div>
           </div>
         </div>
         <Dialog
