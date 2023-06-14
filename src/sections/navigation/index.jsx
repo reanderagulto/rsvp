@@ -87,12 +87,7 @@ const Navigation = ({
                                         className={cx.item}
                                         onClick={() => navigateSection(item.link, 'mobile')}
                                     >
-                                        <a 
-                                            href={item.link}
-                                            onClick={handleHamburger}
-                                        >
-                                            {item.title}
-                                        </a>
+                                        {item.title}
                                     </li>
                                 )
                             })}

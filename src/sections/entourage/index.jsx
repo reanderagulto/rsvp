@@ -49,12 +49,10 @@ const Entourage = ({
                     <div className={cx.content}>
                         <div className={cx.innerContainer}>
                             <div className={cx.inner}>
-                                <h3><strong><em>Bride</em></strong></h3>
                                 <p>{parentsData.bride.father}</p>
                                 <p>{parentsData.bride.mother}</p>
                             </div>
                             <div className={cx.inner}>
-                                <h3><strong><em>Groom</em></strong></h3>
                                 <p>{parentsData.groom.father}</p>
                                 <p>{parentsData.groom.mother}</p>
                             </div>
@@ -84,7 +82,7 @@ const Entourage = ({
                                 {primaryFemale && primaryFemale.map((item, index) => {
                                     return (
                                     <div className={cx.principal} key={index} id={item.id} >
-                                        <h4>{item.title && `${item.title}. `}{item.first_name} {item.middle_initial}. {item.last_name}</h4>
+                                        <h4>{item.title && `${item.title}. `}{item.first_name} {item.middle_initial && `${item.middle_initial}.`} {item.last_name}</h4>
                                     </div>
                                     )
                                 })}
@@ -107,8 +105,14 @@ const Entourage = ({
                                 <p>{`${bestMaid[0].title}. ${bestMaid[0].first_name} ${bestMaid[0].last_name}`}</p>
                             </div>
                             <div className={cx.inner}>
-                                <h3><strong><em>Matron of Honor</em></strong></h3>
-                                <p>{`${bestMaid[1].title}. ${bestMaid[1].first_name} ${bestMaid[1].last_name}`}</p>
+                                <div>
+                                    <h3><strong><em>Maid of Honor</em></strong></h3>
+                                    <p className='text-center'>{`${bestMaid[1].title}. ${bestMaid[1].first_name} ${bestMaid[1].last_name}`}</p>
+                                </div>
+                                <div>
+                                    <h3><strong><em>Matron of Honor</em></strong></h3>
+                                    <p className='text-center'>{`${bestMaid[2].title}. ${bestMaid[2].first_name} ${bestMaid[2].last_name}`}</p>
+                                </div>                                
                             </div>
                         </div>
                         <div className={cx.innerContainerTight}>

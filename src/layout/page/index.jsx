@@ -58,6 +58,7 @@ const Page = () => {
             rsvp_status: doc.data().rsvp_status,
             email: doc.data().email, 
             title: doc.data().title, 
+            sorting: doc.data().sorting
           }
         ))
       )
@@ -120,7 +121,7 @@ const Page = () => {
       })
 
       setBestMaid(entourageData.filter((item) => {
-        return item.role == 'Best Man' || item.role == 'Matron of Maids'
+        return item.role == 'Best Man' || item.role == 'Matron of Maid' || item.role == 'Maid of Honor'
       }))
 
       let data = {}
@@ -141,7 +142,6 @@ const Page = () => {
   useEffect(() => {
     AOS.init()
   }, [])
-
 
   return (
     <>
@@ -169,8 +169,8 @@ const Page = () => {
               <Entourage 
                 title={pageInfo.entourage.title}
                 parentsData={pageInfo.entourage.parents}
-                primaryMale={primaryMale}
-                primaryFemale={primaryFemale}
+                primaryMale={primaryMale.sort((a, b) => a.sorting - b.sorting)}
+                primaryFemale={primaryFemale.sort((a, b) => a.sorting - b.sorting)}
                 veil={veil}
                 cord={cord}
                 candle={candle}

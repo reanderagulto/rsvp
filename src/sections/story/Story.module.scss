@@ -8,7 +8,7 @@
 
 .container {
     h2 {
-        @apply font-heading text-primary-200 drop-shadow-xxl text-xl my-[5.1875rem];
+        @apply font-heading text-primary-200 drop-shadow-xxl text-[60px] md:text-xl my-[2.1875rem] md:my-[5.1875rem];
     }
 }
 
@@ -53,13 +53,13 @@
             @apply flex-col-reverse md:flex-row-reverse;
         }
         .timelineImage {
-            @apply self-center py-[60px];
+            @apply self-center py-[30px] md:py-[60px];
             img {
                 @apply w-full object-cover object-center md:w-full md:h-auto ;
             }
         }
         .timelineContent {
-            @apply self-center py-[100px];
+            @apply self-center py-[30px] md:py-[100px];
             h3 {
                 @apply text-center text-[25px] font-secondary text-secondary uppercase mb-[20px];
             }
