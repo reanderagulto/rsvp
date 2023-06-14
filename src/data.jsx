@@ -27,9 +27,8 @@ import male2 from '@images/dress/male-primary-sponsor-blue-2.jpg'
 import male3 from '@images/dress/male-primary-sponsor-blue-3.jpg'
 
 // Secondary 
-import secMale1 from '@images/dress/male-secondary-sponsor-1.jpg'
-import secMale2 from '@images/dress/male-secondary-sponsor-2.jpg'
-import secMale3 from '@images/dress/male-secondary-sponsor-3.jpg'
+import secMale1 from '@images/dress/male-secondary-sponsor-1.png'
+import secMale2 from '@images/dress/male-secondary-sponsor-2.png'
 import secFemale1 from '@images/dress/female-secondary-sponsor-1.jpg'
 import secFemale2 from '@images/dress/female-secondary-sponsor-2.jpg'
 
@@ -263,13 +262,6 @@ export const pageImages = {
             },
             {
                 original: secMale2,
-                loading: 'lazy',
-                sizes: "173px 300px",
-                originalHeight: "300px",
-                originalWidth: "173px"
-            },
-            {
-                original: secMale3,
                 loading: 'lazy',
                 sizes: "173px 300px",
                 originalHeight: "300px",
