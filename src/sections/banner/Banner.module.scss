@@ -29,7 +29,6 @@
         }    
     }
 
-
     .inner {
         @apply font-secondary md:text-sm text-white-200 pb-[3.875rem];
 
@@ -39,5 +38,9 @@
                 @apply block text-[0.875rem];
             }
         }
+    }
+
+    .button {
+        @apply flex items-center justify-center w-auto h-[3.375rem] p-[1.3125rem] bg-primary-200 rounded-md font-secondary text-white-200 my-[0.6875rem] md:h-[3.625rem] hover:bg-primary-100 transition-all ease-in delay-150 m-auto;
     }
 }
