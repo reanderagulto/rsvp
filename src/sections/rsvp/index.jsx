@@ -93,7 +93,7 @@ const RSVP = ({
       setTyped(false)
     }
     else {        
-      let re = new RegExp('^' + e.target.value.toLowerCase())
+      let re = new RegExp('^' + e.target.value.toLowerCase() + '|-' + e.target.value.toLowerCase())
       data = guests.filter((item) => {
         return item.last_name.toLowerCase().match(re) 
       })

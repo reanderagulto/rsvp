@@ -16,6 +16,12 @@ const Banner = ({
     time, 
     location
 }) => {    
+
+    const navigateRSVP = () => {
+        const element = document.querySelector('#rsvp')
+        element.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" })
+    }
+
     useEffect(() => {
         AOS.refresh()
     }, [])
@@ -39,6 +45,15 @@ const Banner = ({
                             </p>
                             <p data-aos="fade-up" data-aos-duration="900">{parse(location)}</p>
                         </div>
+                        <button 
+                            type="button" 
+                            className={cx.button} 
+                            ata-aos="fade-down" 
+                            data-aos-delay="200"
+                            onClick={navigateRSVP}
+                        >
+                            RSVP Here
+                        </button>
                     </div>
                 </div>
             </div>
