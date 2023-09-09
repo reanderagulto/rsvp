@@ -192,11 +192,11 @@ const Page = () => {
                 ladies={pageInfo.dress.code.ladies}
                 men={pageInfo.dress.code.men}
               />
-              <RSVP 
+              {/* <RSVP 
                 title={pageInfo.rsvp.title}
                 paragraphs={pageInfo.rsvp.paragraphs}
                 guests={guestData}
-              />
+              /> */}
           </main>
           <Footer />
           <div 
