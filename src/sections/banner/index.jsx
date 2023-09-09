@@ -45,7 +45,7 @@ const Banner = ({
                             </p>
                             <p data-aos="fade-up" data-aos-duration="900">{parse(location)}</p>
                         </div>
-                        <button 
+                        {/* <button 
                             type="button" 
                             className={cx.button} 
                             ata-aos="fade-down" 
@@ -53,7 +53,7 @@ const Banner = ({
                             onClick={navigateRSVP}
                         >
                             RSVP Here
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>
